@@ -1,12 +1,12 @@
 :root { 
-    /* couleur d'accent */
+/* couleur d'accent */
   --lilas:    #CDA8CC;
   --rose:     #A45166;
   --tempete:  #4C6092;
   --petrole:  #20576C;
   --givre:    #79B7BF;
   --terre:    #511A00;
-    /* Neutres pour le fond et texte */
+/* Neutres pour le fond et texte */
   --bg-page:      #f8f9fa;
   --bg-card:      #ffffff;
   --text-main:    #1a1a1a;
@@ -14,20 +14,13 @@
   --font-title: 'catchy-mager', sans-serif;
   --font-body: 'Arial', sans-serif;}
 
-    /* polices */
+/* polices */
   @font-face { font-family: 'catchy-mager'; src: url('./font/catchy-mager.otf') format('opentype');}
 
+/* body */
+body { background: var(--fond); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--texte);  padding: 24px;}
 
-.lilas { background: var(--lilas); }
-.rose { background: var(--rose); }
-.tempete { background: var(--tempete); }
-.petrole { background: var(--petrole); }
-.givre { background: var(--givre); }
-.terre { background: var(--terre); }
-.bg-page { background: var(--bg-page); }
-.bg-card { background: var(--bg-card); }
-.text-main { background: var(--text-main); }
-.bordure { background: var(--bordure); }
+
 
 /* titre */
 .title-main {font-family: var(--font-title);}
@@ -87,3 +80,13 @@
   gap: 25px;
   width: 100%;
 }
+.lilas { background: var(--lilas); }
+.rose { background: var(--rose); }
+.tempete { background: var(--tempete); }
+.petrole { background: var(--petrole); }
+.givre { background: var(--givre); }
+.terre { background: var(--terre); }
+.bg-page { background: var(--bg-page); }
+.bg-card { background: var(--bg-card); }
+.text-main { background: var(--text-main); }
+.bordure { background: var(--bordure); }

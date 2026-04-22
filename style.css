@@ -34,19 +34,40 @@ a:hover { color: var(--terre); transform: translateY(-2px);}
 .logo img { display: block; max-width: 150px; height: auto;}
 .main-nav { display: flex; gap: 25px; border-bottom: none;  margin-bottom: 0;}
 .nav-link {
-  padding: 8px 16px;
-  border-radius: 20px; /* Bords très arrondis */
+  position: relative;
+  padding: 8px 15px;
+  color: var(--tempete);
+  text-decoration: none;
+}
+
+/* On crée les coins avec avant/après */
+.nav-link::before, .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 0 solid var(--petrole);
   transition: all 0.3s ease;
 }
 
-.nav-link:hover {
-  background-color: var(--givre); /* Utilise ton bleu givre très clair */
-  color: var(--petrole); /* Le texte devient plus foncé */
+/* Coin haut-gauche */
+.nav-link::before {
+  top: 0; left: 0;
 }
 
-.nav-link.active {
-  background-color: var(--petrole);
-  color: white; /* Le bouton de la page actuelle ressort fort */
+/* Coin bas-droite */
+.nav-link::after {
+  bottom: 0; right: 0;
+}
+
+.nav-link:hover::before {
+  width: 8px; height: 8px;
+  border-top-width: 2px; border-left-width: 2px;
+}
+
+.nav-link:hover::after {
+  width: 8px; height: 8px;
+  border-bottom-width: 2px; border-right-width: 2px;
 }
 
 /*-- PAGE COULEUR -- */

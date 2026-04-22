@@ -18,7 +18,7 @@
   @font-face { font-family: 'catchy-mager'; src: url('./font/catchy-mager.otf') format('opentype');}
 
 /* body */
-body { background: var(--bg-page); font-family: system-ui, -apple-system, sans-serif; color: var(--texte);  padding: 2rem 1rem; max-width: 780px;margin: 0 auto; line-height: 1.6;}
+body { background: var(--bg-page); font-family: system-ui, -apple-system, sans-serif; color: var(--texte);  padding: 2rem 1rem; max-width: 700px;margin: 0 auto; line-height: 1.6;}
 .site-header img { display: block; max-width: 200px;}
 
 /* titre */

@@ -1,4 +1,7 @@
-:root { /* couleur d'accent */
+:root { 
+  /* polices */
+  @font-face { font-family: 'CatchyMager'; src: url('./fonts/catchy-mager.otf') format('opentype');}
+  /* couleur d'accent */
   --lilas:    #CDA8CC;
   --rose:     #A45166;
   --tempete:  #4C6092;
@@ -12,7 +15,7 @@
   --bordure:      #e0e0e0;
   --font-title: 'CatchyMager', sans-serif;
   --font-body: 'Arial', sans-serif;}
-@font-face { font-family: 'CatchyMager'; src: url('./fonts/catchy-mager.otf') format('opentype');}
+
 
 .lilas { background: var(--lilas); }
 .rose { background: var(--rose); }
@@ -23,7 +26,7 @@
 .bg-page { background: var(--bg-page); }
 .bg-card { background: var(--bg-card); }
 .text-main { background: var(--text-main); }
-.bordur { background: var(--bordure); }
+.bordure { background: var(--bordure); }
 
 /* titre */
 .title-main {font-family: var(--font-title);}
@@ -36,7 +39,7 @@
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
-    border-bottom: 2px solid va(--bordure);
+    border-bottom: 2px solid var(--bordure);
 }
 .palette-group {
   display: flex;
@@ -57,7 +60,7 @@
   width: 100%;
 }
 .color-card {
-  background: var(--blanc);
+  background: var(--bg-card);
   border-radius: 12px;
   padding: 10px;
   border: 1px solid var(--bordure);

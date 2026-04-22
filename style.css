@@ -62,21 +62,16 @@ a:hover { color: var(--terre); transform: translateY(-2px);}
 }
 
 .nav-link:hover::before {
-  width: 2px; height: 2px;
+  width: 5px; height: 5px;
   border-top-width: 2px; border-left-width: 2px;
 }
 
 .nav-link:hover::after {
-  width: 2px; height: 2px;
+  width: 5px; height: 5px;
   border-bottom-width: 2px; border-right-width: 2px;
 }
 
-.nav-link.active{
-  border-left: 3px solid var(--givre); /* La barre verticale simple et efficace */
-  border-radius: 2px;
-  color: var(--petrole); /* Couleur plus forte pour la page actuelle */
-  padding-left: 5px; /* On pousse un peu le texte pour laisser la place à la barre */
-}
+.nav-link.active{ background-color: var(--givre); /* Couleur plus forte pour la page actuelle */}
 
 /*-- PAGE COULEUR -- */
 .palette {display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 1000px; margin: 0 auto; border-bottom: 2px solid var(--bordure);}

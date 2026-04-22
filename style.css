@@ -33,17 +33,26 @@ a:hover { color: var(--terre); transform: translateY(-2px);}
 .top-bar { display: flex; justify-content:space-between; /* Le logo à gauche, la nav à droite */ align-items: center;      /* Aligne les deux parfaitement au milieu (hauteur) */ max-width: 780px;         /* Aligné sur la largeur de ton site */ margin: 0 auto;           /* Centré dans la page */ padding: 10px 0;}
 .logo img { display: block; max-width: 150px; height: auto;}
 .main-nav { display: flex; gap: 25px; border-bottom: none;  margin-bottom: 0;}
-
 .nav-link {
-  border: 1px solid transparent;
-  padding: 6px 12px;
-  border-radius: 4px;
+  position: relative;
 }
 
-.nav-link:hover {
-  border-color: var(--bordure);
-  background-color: var(--bg-page);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Petite ombre légère */
+/* On crée une ligne invisible avec ::after */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%; /* On part du milieu */
+  width: 0;   /* Largeur nulle au départ */
+  height: 2px;
+  background-color: var(--rose);
+  transition: all 0.3s ease;
+  transform: translateX(-50%); /* Centrage parfait */
+}
+
+/* Au survol, la ligne s'étend */
+.nav-link:hover::after {
+  width: 100%;
 }
 
 /*-- PAGE COULEUR -- */

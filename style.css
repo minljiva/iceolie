@@ -34,25 +34,19 @@ a:hover { color: var(--terre); transform: translateY(-2px);}
 .logo img { display: block; max-width: 150px; height: auto;}
 .main-nav { display: flex; gap: 25px; border-bottom: none;  margin-bottom: 0;}
 .nav-link {
-  position: relative;
-}
-
-/* On crée une ligne invisible avec ::after */
-.nav-link::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 50%; /* On part du milieu */
-  width: 0;   /* Largeur nulle au départ */
-  height: 2px;
-  background-color: var(--rose);
+  padding: 8px 16px;
+  border-radius: 20px; /* Bords très arrondis */
   transition: all 0.3s ease;
-  transform: translateX(-50%); /* Centrage parfait */
 }
 
-/* Au survol, la ligne s'étend */
-.nav-link:hover::after {
-  width: 100%;
+.nav-link:hover {
+  background-color: var(--givre); /* Utilise ton bleu givre très clair */
+  color: var(--petrole); /* Le texte devient plus foncé */
+}
+
+.nav-link.active {
+  background-color: var(--petrole);
+  color: white; /* Le bouton de la page actuelle ressort fort */
 }
 
 /*-- PAGE COULEUR -- */

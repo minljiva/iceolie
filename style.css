@@ -19,8 +19,7 @@
 
 /* body */
 body { background: var(--bg-page); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--texte);  padding: 24px;}
-
-
+.site-header img { display: block; max-width: 200px;}
 
 /* titre */
 h1 {font-family: var(--font-title); font-size: 22px;}

@@ -35,16 +35,40 @@ a:hover { color: var(--terre); transform: translateY(-2px);}
 .main-nav { display: flex; gap: 25px; border-bottom: none;  margin-bottom: 0;}
 
 .nav-link {
-  padding: 6px 12px;
-  border-radius: 6px;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  padding: 8px 15px;
+  color: var(--tempete);
+  text-decoration: none;
 }
 
-.nav-link:hover {
-  background: var(--bg-card); /* Il ressort du fond */
-  color: var(--petrole);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Ombre portée douce */
-  transform: translateY(-2px); /* Petit saut vers le haut */
+/* On crée les coins avec avant/après */
+.nav-link::before, .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 0 solid var(--petrole);
+  transition: all 0.3s ease;
+}
+
+/* Coin haut-gauche */
+.nav-link::before {
+  top: 0; left: 0;
+}
+
+/* Coin bas-droite */
+.nav-link::after {
+  bottom: 0; right: 0;
+}
+
+.nav-link:hover::before {
+  width: 8px; height: 8px;
+  border-top-width: 2px; border-left-width: 2px;
+}
+
+.nav-link:hover::after {
+  width: 8px; height: 8px;
+  border-bottom-width: 2px; border-right-width: 2px;
 }
 
 /*-- PAGE COULEUR -- */

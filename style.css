@@ -12,7 +12,7 @@
   --texte:    #1a1a1a;
   --bordure:      #e0e0e0;
   --font-title: 'catchy-mager', sans-serif;
-  --font-body: sans-serif;}
+  --font-body: system-ui;}
 
 /* polices */
   @font-face { font-family: 'catchy-mager'; src: url('./font/catchy-mager.otf') format('opentype');}

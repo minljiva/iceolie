@@ -1,2 +1,0 @@
-# iceolie
-projet commun

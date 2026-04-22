@@ -36,7 +36,7 @@ a:hover { color: var(--terre); transform: translateY(-2px);}
 
 .nav-link {
   position: relative;
-  padding: 8px 15px;
+  padding: 5px 10px;
   color: var(--tempete);
   text-decoration: none;
 }
@@ -62,12 +62,12 @@ a:hover { color: var(--terre); transform: translateY(-2px);}
 }
 
 .nav-link:hover::before {
-  width: 8px; height: 8px;
+  width: 5px; height: 5px;
   border-top-width: 2px; border-left-width: 2px;
 }
 
 .nav-link:hover::after {
-  width: 8px; height: 8px;
+  width: 5px; height: 5px;
   border-bottom-width: 2px; border-right-width: 2px;
 }
 

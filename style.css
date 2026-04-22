@@ -34,7 +34,7 @@ a:hover { color: var(--terre); transform: translateY(-2px);}
 .logo img { display: block; max-width: 150px; height: auto;}
 .main-nav { display: flex; gap: 5px; border-bottom: none;  margin-bottom: 0; font-size: 12px;}
 
-.nav-link { position: relative; padding: 2px 2px; color: var(--tempete); text-decoration: none;}
+.nav-link { position: relative; padding: 5px 5px; color: var(--tempete); text-decoration: none;}
 /* On crée les coins avec avant/après */
 .nav-link::before, .nav-link::after { content: ""; position: absolute; width: 0; height: 0; border: 0 solid var(--petrole); transition: all 0.3s ease;}
 /* Coin haut-gauche */

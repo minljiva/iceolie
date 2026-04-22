@@ -1,6 +1,6 @@
 :root { 
   /* polices */
-  @font-face { font-family: 'CatchyMager'; src: url('./fonts/catchy-mager.otf') format('opentype');}
+  @font-face { font-family: 'catchy-mager'; src: url('./fonts/catchy-mager.otf') format('opentype');}
   /* couleur d'accent */
   --lilas:    #CDA8CC;
   --rose:     #A45166;

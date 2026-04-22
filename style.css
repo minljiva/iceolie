@@ -10,7 +10,7 @@
   --bg-page:      #f8f9fa;
   --bg-card:      #ffffff;
   --text-main:    #1a1a1a;
-  --border-color: #e0e0e0;
+  --bordure: #e0e0e0;
 }
 
 .lilas { background: var(--lilas); }
@@ -22,9 +22,18 @@
 .bg-page { background: var(--bg-page); }
 .bg-card { background: var(--bg-card); }
 .text-main { background: var(--text-main); }
-.border-color { background: var(--border-color); }
+.bordur { background: var(--bordure); }
 
 /*-- PAGE COULEUR -- */
+.palette {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+    border-bottom: 2px solid va(--bordure);
+}
 .palette-group {
   display: flex;
   flex-direction: column;
@@ -44,7 +53,7 @@
   width: 100%;
 }
 .color-card {
-    background: var(--blanc);
+  background: var(--blanc);
   border-radius: 12px;
   padding: 10px;
   border: 1px solid var(--bordure);
@@ -56,7 +65,7 @@
   width: 130px; /* Un peu plus large pour respirer */
 }
 .color-box { 
-  width: 100%;       /* IMPORTANT : Pour qu'on voie la couleur */
+  width: 100%;
   height: 80px; 
   border-radius: 10px; 
   margin-bottom: 10px;

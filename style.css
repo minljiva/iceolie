@@ -33,8 +33,7 @@ a:hover { color: var(--terre); transform: translateY(-2px);}
 .top-bar { display: flex; justify-content:space-between; /* Le logo à gauche, la nav à droite */ align-items: center;      /* Aligne les deux parfaitement au milieu (hauteur) */ max-width: 780px;         /* Aligné sur la largeur de ton site */ margin: 0 auto;           /* Centré dans la page */ padding: 10px 0;}
 .logo img { display: block; max-width: 150px; height: auto;}
 .main-nav { display: flex; gap: 5px; border-bottom: none;  margin-bottom: 0; font-size: 12px;}
-
-.nav-link { position: relative; padding: 5px 5px; color: var(--tempete); text-decoration: none;}
+.nav-link { position: relative; padding: 3px 5px; color: var(--tempete); text-decoration: none;}
 /* On crée les coins avec avant/après */
 .nav-link::before, .nav-link::after { content: ""; position: absolute; width: 0; height: 0; border: 0 solid var(--petrole); transition: all 0.3s ease;}
 /* Coin haut-gauche */

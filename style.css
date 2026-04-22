@@ -13,8 +13,9 @@
   --bordure:      #e0e0e0;
   --font-title: 'catchy-mager', sans-serif;
   --font-body: 'Arial', sans-serif;}
+
     /* polices */
-  @font-face { font-family: 'catchy-mager'; src: url('/font/catchy-mager.otf') format('opentype');}
+  @font-face { font-family: 'catchy-mager'; src: url('./font/catchy-mager.otf') format('opentype');}
 
 
 .lilas { background: var(--lilas); }
@@ -39,7 +40,7 @@
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
-  border-bottom: 20px solid var(--bordure);
+  border-bottom: 2px solid var(--bordure);
 }
 .palette-group {
   display: flex;

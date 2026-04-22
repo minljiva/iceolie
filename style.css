@@ -1,1 +1,65 @@
+:root {
+  /* couleur d'accent */
+  --lilas:    #CDA8CC;
+  --rose:     #79B7BF;
+  --tempete:  #4C6092;
+  --petrole: #20576C;
+  --givre:    #79B7BF;
+  --terre:    #511A00;
+  /* Neutres pour le fond et texte */
+  --bg-page:      #f8f9fa;
+  --bg-card:      #ffffff;
+  --text-main:    #1a1a1a;
+  --border-color: #e0e0e0;
+}
+
+.lilas { background: var(--lilas); }
+.rose { background: var(--rose); }
+.tempete { background: var(--tempete); }
+.petrole { background: var(--petrole); }
+.givre { background: var(--givre); }
+.terre { background: var(--terre); }
+.bg-page { background: var(--bg-page); }
+.bg-card { background: var(--bg-card); }
+.text-main { background: var(--text-main); }
+.border-color { background: var(--border-color); }
+
+/*-- PAGE COULEUR -- */
+.palette-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 5px; 
+}
+.palette-title {
+  font-family: 'Halimun', sans-serif; 
+  font-size: 18px;
+  margin-top: 24px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--bordure);
+  text-align: left;
+  margin-right: 20px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+.color-card {
+    background: var(--blanc);
+  border-radius: 12px;
+  padding: 10px;
+  border: 1px solid var(--bordure);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 130px; /* Un peu plus large pour respirer */
+}
+.color-box { 
+  width: 100%;       /* IMPORTANT : Pour qu'on voie la couleur */
+  height: 80px; 
+  border-radius: 10px; 
+  margin-bottom: 10px;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05); /* Petite bordure interne discrète */
+}
 

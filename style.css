@@ -45,6 +45,13 @@
     /* liens */
     a { color: var(--petrole); text-decoration: none; transition: color 0.15s; }
     a:hover { color: var(--terre); transform: translateY(-2px);}
+    /* bordures */
+    .border-lilas { border-bottom: 2px solid var(--lilas) }
+    .border-terre { border-bottom: 2px solid var(--terre) }
+    .border-rose { border-bottom: 2px solid var(--rose) }
+    .border-tempete { border-bottom: 2px solid var(--tempete) }
+    .border-petrole { border-bottom: 2px solid var(--petrole) }
+    .border-givre { border-bottom: 2px solid var(--givre) }
 
 /*-- NAVIGATION --*/
     .top-bar { display: flex; justify-content:space-between; /* Le logo à gauche, la nav à droite */ align-items: center;      /* Aligne les deux parfaitement au milieu (hauteur) */ max-width: 780px;         /* Aligné sur la largeur de ton site */ margin: 0 auto;           /* Centré dans la page */ padding: 10px 0;}

@@ -36,4 +36,9 @@ a:hover { color: var(--terre); transform: translateY(-2px); }
 .mini-list { list-style: none; padding: 0; font-size: 13px; color: var(--texte-muted); }
 .mini-list li { border-bottom: 1px dashed var(--bordure); padding: 2px 0; }
 
+.content-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px dashed var(--bordure); margin-bottom: 20px; gap: 15px; }
+.content-header h2 { border-bottom: none; margin-bottom: 0; flex-shrink: 0; }
+#searchInput { background: var(--bg-card); border: 1px solid var(--bordure); padding: 5px 12px; border-radius: 5px; font-size: 13px; font-family: var(--font-body); color: var(--texte-soft); outline: none; transition: all 0.3s; width: 100%; max-width: 300px; }
+#searchInput:focus { border-color: var(--petrole); box-shadow: 0 0 0 2px var(--givre-pale); }s
+
 .lilas { background: var(--lilas); } .rose { background: var(--rose); } .terre { background: var(--terre); } .givre { background: var(--givre); } .tempete { background: var(--tempete); } .petrole { background: var(--petrole); } .lilas-pale { background: var(--lilas-pale); } .givre-pale { background: var(--givre-pale); } .terre-pale { background: var(--terre-pale); } .bg-outer { background: var(--bg-outer); } .bg-page { background: var(--bg-page); } .bg-card { background: var(--bg-card); } .texte-soft { background: var(--texte-soft); } .texte-muted { background: var(--texte-muted); } .bordure { background: var(--bordure); } .bordure-forte { background: var(--bordure-forte); }

@@ -6,7 +6,7 @@ const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 // 🛠️ 1. FONCTION DE RÉCUPÉRATION
 async function fetchProjects() {
     const { data, error } = await _supabase
-        .from('iceolie-project') 
+        .from('iceolie_projets') 
         .select('*')
         .order('created_at', { ascending: false });
 
@@ -55,7 +55,7 @@ if (projectForm) {
             cat: 'Inspiration'
         };
 
-        const { error } = await _supabase.from('iceolie-project').insert([newProject]);
+        const { error } = await _supabase.from('iceolie_projets').insert([newProject]);
 
         if (error) {
             alert("Erreur lors de l'envoi : " + error.message);

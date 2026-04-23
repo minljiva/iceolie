@@ -86,8 +86,8 @@ a:hover { color: var(--terre); transform: translateY(-2px);}
 .texte-muted { background: var(--texte-muted); }
 .bordure { background: var(--bordure); }
 .bordure-forte { background: var(--bordure-forte); }
-.ombre { background: var(--C-ombre); }
-.ombre-forte { background: var(--C-ombre-forte); }
+.C-ombre { background: var(--C-ombre); }
+.C-ombre-forte { background: var(--C-ombre-forte); }
 
 /* PAGE INDEX */
 .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; padding: 10px;}

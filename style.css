@@ -91,24 +91,21 @@ a:hover { color: var(--terre); transform: translateY(-2px);}
 
 /* PAGE INDEX */
 .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; padding: 10px;}
-.db-card { background: var(--bg-card); padding: 5px; border-radius: 7px; position: relative; /* On garde un arrondi léger mais on mise sur la bordure */ border: 1px solid var(--bordure); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); box-shadow: 4px 4px 0px var(--ombre-forte); }
+.db-card { background: var(--bg-card); padding: 10px; border-radius: 7px; position: relative; /* On garde un arrondi léger mais on mise sur la bordure */ border: 1px solid var(--bordure); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); box-shadow: 4px 4px 0px var(--ombre-forte); }
 
 /* On ajoute un petit "voyant" lumineux pour le statut */
 .db-card::before, .db-card::after { content: ""; position: absolute; width: 0; height: 0; border: 0 solid var(--bordure); /* Couleur pétrole comme ta nav */ transition: all 0.4s ease;}
-
 /* Coin haut-gauche */
 .db-card::before { top: 0; left: 0; }
 /* Coin bas-droite */
 .db-card::after { bottom: 0; right: 0; }
-
 /* Animation au survol de la carte */
 .db-card:hover {border-radius: 0px; transform: translate(-2px, -2px); /* Petit décalage pour l'effet 3D */ box-shadow: 5px 5px 0px var(--givre); /* L'ombre devient colorée */ border-color: var(--bordure);}
-
 .db-card:hover::before { width: 25px; height: 25px; border-top-width: 3px; border-left-width: 3px;}
 .db-card:hover::after { width: 25px; height: 25px; border-bottom-width: 3px; border-right-width: 3px;}
 
 /* Le titre H3 typé "Technique" */
-.db-card h3 { font-family: var(--font-title); font-size: 1.2rem; color: var(--texte-muted); margin-bottom: 5px; padding-left: 10px; border-left: 4px solid var(--rose); /* Rappel de ta barre de côté "active" */ display: block;}
+.db-card h3 { font-family: var(--font-title); font-size: 1.2rem; margin-top: -10px; color: var(--texte-soft); margin-bottom: 5px; padding-left: 10px; border-left: 4px solid var(--rose); /* Rappel de ta barre de côté "active" */ display: block;}
 
 /* Pour le contenu, on reste sobre */
 .db-content { font-size: 13px; color: var(--texte-muted);}

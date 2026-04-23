@@ -86,7 +86,7 @@ a:hover { color: var(--terre); transform: translateY(-2px);}
 .color-card { background: var(--bg-card); border-radius: 12px; padding: 10px; margin-bottom: 5px; border: 1px solid var(--bordure); transition: transform 0.15s ease, box-shadow 0.15s ease; display: flex; flex-direction: column; align-items: center; text-align: center; width: 130px; }
 .color-box {  width: 100%; height: 80px;  border-radius: 10px;  margin-bottom: 2px; box-shadow: inset 0 0 0 1px var(--bordure);}
 .cards-container-accent { display: grid; grid-template-columns: repeat(3, 1fr);   /* Crée 3 colonnes de taille égale (1fr = 1 fraction) */ justify-items: center; gap: 25px; width: 100%;}
-.cards-container-soft { display: flex; flex-direction: row; justify-content: center; flex-wrap: wrap; gap: 25px; width: 100%;}
+.cards-container-soft { display: grid; grid-template-columns: repeat(2, 1fr);   /* Crée 3 colonnes de taille égale (1fr = 1 fraction) */ justify-items: center;  gap: 25px; width: 100%;}
 .lilas { background: var(--lilas); }
 .lilas-pale { background: var(--lilas-pale); }
 .rose { background: var(--rose); }

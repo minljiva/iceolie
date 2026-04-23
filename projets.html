@@ -3,35 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href=".img/favicon.png">
-  <link rel="stylesheet" href="style.css">
-  <title>projets — iceolie</title>
+  <link rel="icon" type="image/png" href="img/favicon.png"> <link rel="stylesheet" href="style.css">
+  <title>Projets — Iceolie</title>
 </head>
 <body>
 
-<header class="site-header"">
+<header class="site-header">
   <div class="top-bar">
-<a href="index.html" class="logo"><img src="img/ICEOLIE-HEADER.png" alt="iceolie"></a>
-  <nav class="main-nav">
-    <a href="index.html" class="nav-link">Dashboard</a>
-    <a href="lexique.html" class="nav-link">Lexique</a>
-    <a href="projets.html" class="nav-link active">Projets</a>
-    <a href="admin.html" class="nav-link">Admin</a>
-    <a href="couleurs.html" class="nav-link">Couleurs</a>
-  </nav>
+    <a href="index.html" class="logo"><img src="img/ICEOLIE-HEADER.png" alt="iceolie"></a>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-link">Dashboard</a>
+      <a href="lexique.html" class="nav-link">Lexique</a>
+      <a href="projets.html" class="nav-link active">Projets</a>
+      <a href="admin.html" class="nav-link">Admin</a>
+      <a href="couleurs.html" class="nav-link">Couleurs</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page-content">
+  <h1>Projets</h1>
+  <div class="content-header">
+    <h2>Savoir où l'on va pour ne pas se perdre</h2>
   </div>
 
-  <h1>Projets</h1>
-  <main class="page-content"><div class="content-header">
-  <h2>Savoir où l'on va pour ne pas se perdre</h2></div>
-
   <section class="add-project-box">
-  <form id="projectForm">
-    <input type="text" id="projTitle" placeholder="Nom de l'objet..." required>
-    <input type="text" id="projLink" placeholder="Lien (URL)..." required>
-    <input type="text" id="projImg" placeholder="Lien image (URL)...">
-    <button type="submit" class="btn-filter active" style="margin:0">Partager</button>
-  </form>
-</section>
-    
-  </div></main>  <script src="./scripts/projects.js"></script></body></html>
+    <form id="projectForm">
+      <input type="text" id="projTitle" placeholder="Nom de l'objet..." required>
+      <input type="text" id="projLink" placeholder="Lien (URL)..." required>
+      <input type="text" id="projImg" placeholder="Lien image (URL)...">
+      <button type="submit" class="btn-filter active" style="margin:0">Partager</button>
+    </form>
+  </section>
+
+  <div id="projectsContainer"></div> 
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./scripts/projects.js"></script>
+
+</body>
+</html>

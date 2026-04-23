@@ -23,8 +23,8 @@
   /* -- Ombre --*/
   --ombre:       0 2px 8px  rgba(30, 20, 15, 0.10);
   --ombre-forte: 0 4px 16px rgba(30, 20, 15, 0.18);
-  --C-ombre:       rgba(30, 20, 15, 0.10);
-  --C-ombre-forte: rgba(30, 20, 15, 0.18);
+  --C-ombre:       #1E140F;
+  --C-ombre-forte: #1E140F;
   /* ── Typographie ── */
   --font-title:     'catchy-mager', sans-serif;
   --font-body:      system-ui;

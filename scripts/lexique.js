@@ -22,7 +22,10 @@ function renderCodex(data) {
 }
 
 function filterAndRender() {
-  const term = document.getElementById('searchInput').value.toLowerCase();
+  const searchInput = document.getElementById('searchInput');
+  if (!searchInput) return;
+  
+  const term = searchInput.value.toLowerCase();
   
   const filtered = codexData.filter(item => {
     const matchesSearch = item.title.toLowerCase().includes(term) || item.note.toLowerCase().includes(term);
@@ -35,28 +38,32 @@ function filterAndRender() {
 
 /* --- 4. ÉCOUTEURS --- */
 
-// Recherche
-document.getElementById('searchInput').addEventListener('input', filterAndRender);
-
-// Bouton Effacer
-document.getElementById('clearSearch').addEventListener('click', () => {
-  document.getElementById('searchInput').value = ''; // Vide l'input
-  filterAndRender(); // Relance le rendu
-});
-
-// Boutons de Filtres
-document.querySelectorAll('.btn-filter[data-cat]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    // Visuel : on change la classe active
-    document.querySelectorAll('.btn-filter').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+// On attend que le DOM soit chargé par sécurité
+document.addEventListener('DOMContentLoaded', () => {
     
-    // Logique : on change le filtre
-    currentFilter = btn.getAttribute('data-cat');
-    console.log("Filtre sélectionné :", currentFilter); // Pour debugger
-    filterAndRender();
-  });
-});
+    const searchInput = document.getElementById('searchInput');
+    const clearBtn = document.getElementById('clearSearch');
 
-/* --- 5. LANCEMENT --- */
-renderCodex(codexData);
+    if (searchInput) {
+        searchInput.addEventListener('input', filterAndRender);
+    }
+
+    if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            filterAndRender();
+        });
+    }
+
+    document.querySelectorAll('.btn-filter[data-cat]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.btn-filter').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentFilter = btn.getAttribute('data-cat');
+            filterAndRender();
+        });
+    });
+
+    // Lancement initial
+    renderCodex(codexData);
+});

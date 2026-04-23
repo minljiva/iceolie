@@ -37,7 +37,10 @@
     .page-content { background: var(--bg-page); /* Ou une couleur très légèrement différente de var(--bg-page) */ border: 1px solid var(--bordure); border-top: 2px solid var(--bordure-forte); /* Un rappel de ta couleur forte en haut */ border-radius: 20px 20px 0 0; /* Arrondi uniquement en haut */ padding: 20px; padding-top: 5px; margin-top: -15px; min-height: 80vh; /* Pour qu'il descende bien jusqu'en bas de l'écran */ box-shadow:  var(--ombre); /* Petite ombre vers le haut pour l'effet de feuille posée */ max-width: 780px; /* Un peu plus large que ton header pour donner du souffle */ margin-left: auto; margin-right: auto;}
     /* titre */
     h1 {font-family: var(--font-title); font-size: 33px; color: var(--texte-soft); text-shadow: var(--ombre); font-weight: 500; text-align: center; margin-bottom: 0rem; margin-top: -20px; }
-    h2 {font-family: var(--font-title); font-size: 1.2rem; font-weight: 500; color: var(--texte-muted); margin-top: 0px; border-bottom: 2px dashed var(--bordure);  padding-bottom: 0px; line-height: 1; /* colle la bordure au texte */}
+    h2 {font-family: var(--font-title); font-size: 22rem; font-weight: 500; color: var(--texte-muted); margin-top: 0px; border-bottom: 2px dashed var(--bordure);  padding-bottom: 0px; line-height: 1; /* colle la bordure au texte */}
+    h3 {font-family: var(--font-title); font-size: 18rem; Padding-bottom: 0px; line-height: 1; margin-top: -3px; color: var(--texte-soft); margin-bottom: 5px; padding-left: 10px; border-left: 4px solid var(--rose); /* Rappel de ta barre de côté "active" */ display: block;}
+    h4 {font-family: var(--font-title);  font-size: 18px; color: var(--petrole); padding-bottom: 0px; line-height: 1; border-bottom: 2px solid var(--bordure-forte); text-align: left; margin-right: 20px; margin-bottom: 5px; width: 100%; }
+    h5 { margin: 0; font-family: var(--font-body); font-weight: 700; color: var(--texte-soft);
     p  { margin: 5px 2px; }
     /* liens */
     a { color: var(--petrole); text-decoration: none; transition: color 0.15s; }
@@ -61,7 +64,6 @@
 /*-- PAGE COULEUR -- */
     .palette {display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 1000px; margin: 0 auto; border-bottom: 2px solid var(--bordure);}
     .palette-group { display: flex; flex-direction: column; align-items: center; width: 100%; margin-bottom: 5px; }
-    .palette-title { font-family: var(--font-title);  font-size: 18px; padding-bottom: 0px; line-height: 1; border-bottom: 2px solid var(--bordure-forte); text-align: left; margin-right: 20px; margin-bottom: 5px; width: 100%; }
     .color-card { background: var(--bg-card); border-radius: 12px; padding: 10px; margin-bottom: 5px; border: 1px solid var(--bordure); transition: transform 0.15s ease, box-shadow: var(--bordure); display: flex; flex-direction: column; align-items: center; text-align: center; width: 130px; }
     .color-box {  width: 100%; height: 80px; color: var(--texte-soft); border-radius: 10px;  margin-bottom: 2px; box-shadow: var(--bordure);}
     .cards-container-accent { display: grid; grid-template-columns: repeat(3, 1fr);   /* Crée 3 colonnes de taille égale (1fr = 1 fraction) */ justify-items: center; gap: 25px; width: 100%;}
@@ -99,8 +101,6 @@
     .db-card:hover {border-radius: 0px; transform: translate(-2px, -2px); /* Petit décalage pour l'effet 3D */ box-shadow: 5px 5px 0px var(--givre); /* L'ombre devient colorée */ border-color: var(--bordure);}
     .db-card:hover::before { width: 25px; height: 25px; border-top-width: 3px; border-left-width: 3px;}
     .db-card:hover::after { width: 25px; height: 25px; border-bottom-width: 3px; border-right-width: 3px;}
-    /* Le titre H3 typé "Technique" */
-    .db-card h3 { font-family: var(--font-title); font-size: 1.2rem; Padding-bottom: 0px; line-height: 1; margin-top: -3px; color: var(--texte-soft); margin-bottom: 5px; padding-left: 10px; border-left: 4px solid var(--rose); /* Rappel de ta barre de côté "active" */ display: block;}
     /* Pour le contenu, on reste sobre */
     .db-content { font-size: 13px; color: var(--texte-muted);margin-left: 10px;}
 
@@ -145,12 +145,6 @@
   padding-bottom: 5px;
 }
 
-.card-header h4 {
-  margin: 0;
-  font-family: var(--font-body);
-  font-weight: 700;
-  color: var(--texte-soft);
-}
 
 .badge-tech {
   font-size: 10px;

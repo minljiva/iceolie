@@ -1,190 +1,39 @@
-:root {
-    /* ── Accents ── */
-    --lilas:          #CDA8CC;
-    --lilas-pale:     #EDE4ED;
-    --rose:           #A45166;
-    --tempete:        #4C6092;
-    --petrole:        #20576C;
-    --givre:          #79B7BF;
-    --givre-pale:     #D6E9EC;
-    --terre:          #511A00;
-    --terre-pale:     #F0DDD5;
-    /* ── Fonds — hiérarchie page ── */
-    --bg-outer:       #DDDBD4;
-    --bg-page:        #F0EEE8;
-    --bg-card:        #FAFAF7;
-    /* ── Texte ── */
-    --texte:          #1E1E1E;
-    --texte-soft:     #4A4845;
-    --texte-muted:    #8C8A86;
-    /* ── Bordures ── */
-    --bordure:        #C8C5BE;
-    --bordure-forte:  #7A7874;
-    /* -- Ombre --*/
-    --ombre:       0 2px 8px  rgba(30, 20, 15, 0.10);
-    --ombre-forte: 0 4px 16px rgba(30, 20, 15, 0.18);
-    --C-ombre:       #1E140F;
-    --C-ombre-forte: #1E140F;
-    /* ── Typographie ── */
-    --font-title:     'catchy-mager', sans-serif;
-    --font-body:      system-ui;}
+:root { --lilas: #CDA8CC; --lilas-pale: #EDE4ED; --rose: #A45166; --tempete: #4C6092; --petrole: #20576C; --givre: #79B7BF; --givre-pale: #D6E9EC; --terre: #511A00; --terre-pale: #F0DDD5; --bg-outer: #DDDBD4; --bg-page: #F0EEE8; --bg-card: #FAFAF7; --texte: #1E1E1E; --texte-soft: #4A4845; --texte-muted: #8C8A86; --bordure: #C8C5BE; --bordure-forte: #7A7874; --ombre: 0 2px 8px rgba(30, 20, 15, 0.10); --ombre-forte: 0 4px 16px rgba(30, 20, 15, 0.18); --font-title: 'catchy-mager', sans-serif; --font-body: system-ui; }
 
-/*-- OVERALL --*/
-    /* polices */
-    @font-face { font-family: 'catchy-mager'; src: url('./font/catchy-mager.otf') format('opentype');}
-    /* body */
-    body { background: var(--bg-outer); font-family: system-ui, -apple-system, sans-serif; color: var(--texte);  padding: 2rem 0; max-width: 100%; margin: 0 auto; line-height: 1.6;}
-    .page-content { background: var(--bg-page); /* Ou une couleur très légèrement différente de var(--bg-page) */ border: 1px solid var(--bordure); border-top: 2px solid var(--bordure-forte); /* Un rappel de ta couleur forte en haut */ border-radius: 20px 20px 0 0; /* Arrondi uniquement en haut */ padding: 20px; padding-top: 5px; margin-top: -15px; min-height: 80vh; /* Pour qu'il descende bien jusqu'en bas de l'écran */ box-shadow:  var(--ombre); /* Petite ombre vers le haut pour l'effet de feuille posée */ max-width: 780px; /* Un peu plus large que ton header pour donner du souffle */ margin-left: auto; margin-right: auto;}
-    /* titre */
-    h1 {font-family: var(--font-title); font-size: 33px; color: var(--texte-soft); text-shadow: var(--ombre); font-weight: 500; text-align: center; margin-bottom: 0rem; margin-top: -20px; }
-    h2 {font-family: var(--font-title); font-size: 22px; font-weight: 500; color: var(--texte-muted); margin-top: 0px; border-bottom: 2px dashed var(--bordure);  padding-bottom: 0px; line-height: 1; /* colle la bordure au texte */}
-    h3 {font-family: var(--font-title); font-size: 18px; Padding-bottom: 0px; line-height: 1; margin-top: -3px; color: var(--texte-soft); margin-bottom: 5px; padding-left: 10px; border-left: 4px solid var(--rose); /* Rappel de ta barre de côté "active" */ display: block;}
-    h4 {font-family: var(--font-title);  font-size: 18px; color: var(--petrole); padding-bottom: 0px; line-height: 1; border-bottom: 2px solid var(--bordure-forte); text-align: left; margin-right: 18px; margin-bottom: 5px; width: 100%; }
-    h5 { margin: 0; font-family: var(--font-body); font-weight: 700; color: var(--texte-soft);}
-    p  { margin: 5px 2px; }
-    /* liens */
-    a { color: var(--petrole); text-decoration: none; transition: color 0.15s; }
-    a:hover { color: var(--terre); transform: translateY(-2px);}
-    /* bordures */
-    .border-lilas { border-bottom: 2px solid var(--lilas) }
-    .border-terre { border-bottom: 2px solid var(--terre) }
-    .border-rose { border-bottom: 2px solid var(--rose) }
-    .border-tempete { border-bottom: 2px solid var(--tempete) }
-    .border-petrole { border-bottom: 2px solid var(--petrole) }
-    .border-givre { border-bottom: 2px solid var(--givre) }
+@font-face { font-family: 'catchy-mager'; src: url('./font/catchy-mager.otf') format('opentype'); }
+body { background: var(--bg-outer); font-family: var(--font-body); color: var(--texte); padding: 2rem 0; max-width: 100%; margin: 0 auto; line-height: 1.6; }
+.page-content { background: var(--bg-page); border: 1px solid var(--bordure); border-top: 2px solid var(--bordure-forte); border-radius: 20px 20px 0 0; padding: 20px; padding-top: 5px; margin-top: -15px; min-height: 80vh; box-shadow: var(--ombre); max-width: 780px; margin-left: auto; margin-right: auto; }
+h1 { font-family: var(--font-title); font-size: 33px; color: var(--texte-soft); text-shadow: var(--ombre); font-weight: 500; text-align: center; margin-bottom: 0rem; margin-top: -20px; }
+h2 { font-family: var(--font-title); font-size: 22px; font-weight: 500; color: var(--texte-muted); margin-top: 0px; border-bottom: 2px dashed var(--bordure); padding-bottom: 0px; line-height: 1; margin-bottom: 20px; }
+h3 { font-family: var(--font-title); font-size: 18px; line-height: 1; margin-top: 5px; color: var(--texte-soft); margin-bottom: 10px; padding-left: 10px; border-left: 4px solid var(--rose); display: block; }
+h4 { font-family: var(--font-title); font-size: 18px; color: var(--petrole); line-height: 1; border-bottom: 2px solid var(--bordure-forte); text-align: left; margin-bottom: 15px; width: 100%; margin-top: 20px; }
+h5 { margin: 0; font-family: var(--font-body); font-weight: 700; color: var(--texte-soft); font-size: 14px; border-bottom: 1px dashed var(--bordure); margin-bottom: 8px; padding-bottom: 2px; }
+p { margin: 5px 2px; }
+a { color: var(--petrole); text-decoration: none; transition: color 0.15s; }
+a:hover { color: var(--terre); transform: translateY(-2px); }
 
-/*-- NAVIGATION --*/
-    .top-bar { display: flex; justify-content:space-between; /* Le logo à gauche, la nav à droite */ align-items: center;      /* Aligne les deux parfaitement au milieu (hauteur) */ max-width: 780px;         /* Aligné sur la largeur de ton site */ margin: 0 auto;           /* Centré dans la page */ padding: 10px 0;}
-    .logo img { display: block; max-width: 150px; height: auto;}
-    .main-nav { display: flex; gap: 5px; border-bottom: none;  margin-bottom: 0; font-size: 12px;}
-    .nav-link { position: relative; padding: 3px 5px; color: var(--petrole); text-decoration: none;}
-    /* On crée les coins avec avant/après */
-    .nav-link::before, .nav-link::after { content: ""; position: absolute; width: 0; height: 0; border: 0 solid var(--bordure-forte); transition: all 0.3s ease;}
-    /* Coin haut-gauche */
-    .nav-link::before { top: 0; left: 0;}
-    /* Coin bas-droite */
-    .nav-link::after { bottom: 0; right: 0;}
-    .nav-link:hover::before { width: 9px; height: 9px; border-top-width: 2px; border-left-width: 2px;}
-    .nav-link:hover::after { width: 9px; height: 9px; border-bottom-width: 2px; border-right-width: 2px;}
-    .nav-link.active { border-radius: 7px; color: var(--bg-outer); background-color: var(--texte-soft); /* Couleur plus forte pour la page actuelle */}
+.top-bar { display: flex; justify-content: space-between; align-items: center; max-width: 780px; margin: 0 auto; padding: 10px 0; }
+.logo img { display: block; max-width: 150px; height: auto; }
+.main-nav { display: flex; gap: 5px; font-size: 12px; }
+.nav-link { position: relative; padding: 3px 5px; color: var(--petrole); text-decoration: none; }
+.nav-link::before, .nav-link::after { content: ""; position: absolute; width: 0; height: 0; border: 0 solid var(--bordure-forte); transition: all 0.3s ease; }
+.nav-link::before { top: 0; left: 0; } .nav-link::after { bottom: 0; right: 0; }
+.nav-link:hover::before { width: 9px; height: 9px; border-top-width: 2px; border-left-width: 2px; }
+.nav-link:hover::after { width: 9px; height: 9px; border-bottom-width: 2px; border-right-width: 2px; }
+.nav-link.active { border-radius: 7px; color: var(--bg-outer); background-color: var(--texte-soft); }
 
-/*-- PAGE COULEUR -- */
-    .palette {display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 1000px; margin: 0 auto; border-bottom: 2px solid var(--bordure);}
-    .palette-group { display: flex; flex-direction: column; align-items: center; width: 100%; margin-bottom: 5px; }
-    .color-card { background: var(--bg-card); border-radius: 7px; padding: 10px; margin-bottom: 5px; border: 1px solid var(--bordure); transition: transform 0.15s ease, ox-shadow: var(--ombre-forte);; display: flex; flex-direction: column; align-items: center; text-align: center; width: 130px; }
-    .color-box {  width: 100%; height: 80px; color: var(--texte-soft); border-radius: 10px;  margin-bottom: 2px; box-shadow: var(--bordure);}
-    .cards-container-accent { display: grid; grid-template-columns: repeat(3, 1fr);   /* Crée 3 colonnes de taille égale (1fr = 1 fraction) */ justify-items: center; gap: 25px; width: 100%;}
-    .cards-container-soft { display: grid; grid-template-columns: repeat(2, 1fr);   /* Crée 3 colonnes de taille égale (1fr = 1 fraction) */ justify-items: center;  gap: 25px; width: 100%;}
-    .lilas { background: var(--lilas); }
-    .lilas-pale { background: var(--lilas-pale); }
-    .rose { background: var(--rose); }
-    .tempete { background: var(--tempete); }
-    .petrole { background: var(--petrole); }
-    .givre { background: var(--givre); }
-    .givre-pale { background: var(--givre-pale); }
-    .terre { background: var(--terre); }
-    .terre-pale { background: var(--terre-pale); }
-    .bg-outer { background: var(--bg-outer); }
-    .bg-page { background: var(--bg-page); }
-    .bg-card { background: var(--bg-card); }
-    .texte { background: var(--texte); }
-    .texte-soft { background: var(--texte-soft); }
-    .texte-muted { background: var(--texte-muted); }
-    .bordure { background: var(--bordure); }
-    .bordure-forte { background: var(--bordure-forte); }
-    .C-ombre { background: var(--C-ombre); }
-    .C-ombre-forte { background: var(--C-ombre-forte); }
+.grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; padding: 10px 0; }
+.card { background: var(--bg-card); padding: 15px; border-radius: 7px; position: relative; border: 1px solid var(--bordure); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); box-shadow: var(--ombre-forte); }
+.card::before, .card::after { content: ""; position: absolute; width: 0; height: 0; border: 0 solid var(--bordure); transition: all 0.4s ease; }
+.card::before { top: 0; left: 0; } .card::after { bottom: 0; right: 0; }
+.card:hover { border-radius: 0px; transform: translate(-2px, -2px); box-shadow: 5px 5px 0px var(--givre); border-color: var(--bordure-forte); }
+.card:hover::before { width: 20px; height: 20px; border-top-width: 3px; border-left-width: 3px; border-color: var(--petrole); }
+.card:hover::after { width: 20px; height: 20px; border-bottom-width: 3px; border-right-width: 3px; border-color: var(--petrole); }
 
-/* PAGE INDEX */
-    .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; padding: 10px;}
-    .db-card { background: var(--bg-card); padding: 10px; border-radius: 7px; position: relative; /* On garde un arrondi léger mais on mise sur la bordure */ border: 1px solid var(--bordure); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); box-shadow: var(--ombre-forte); }
-    /* On ajoute un petit "voyant" lumineux pour le statut */
-    .db-card::before, .db-card::after { content: ""; position: absolute; width: 0; height: 0; border: 0 solid var(--bordure); /* Couleur pétrole comme ta nav */ transition: all 0.4s ease;}
-    /* Coin haut-gauche */
-    .db-card::before { top: 0; left: 0; }
-    /* Coin bas-droite */
-    .db-card::after { bottom: 0; right: 0; }
-    /* Animation au survol de la carte */
-    .db-card:hover {border-radius: 0px; transform: translate(-2px, -2px); /* Petit décalage pour l'effet 3D */ box-shadow: 5px 5px 0px var(--givre); /* L'ombre devient colorée */ border-color: var(--bordure);}
-    .db-card:hover::before { width: 25px; height: 25px; border-top-width: 3px; border-left-width: 3px;}
-    .db-card:hover::after { width: 25px; height: 25px; border-bottom-width: 3px; border-right-width: 3px;}
-    /* Pour le contenu, on reste sobre */
-    .db-content { font-size: 13px; color: var(--texte-muted);margin-left: 10px;}
+.color-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 15px; width: 100%; }
+.color-card { text-align: center; font-size: 11px; padding: 10px; }
+.color-box { width: 100%; height: 60px; border-radius: 5px; margin-bottom: 8px; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05); }
+.mini-list { list-style: none; padding: 0; font-size: 13px; color: var(--texte-muted); }
+.mini-list li { border-bottom: 1px dashed var(--bordure); padding: 2px 0; }
 
-/* --- LAYOUT LEXIQUE --- */
-.lexique-container {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.cat-title {
-  font-family: var(--font-title);
-  font-size: 1.4rem;
-  color: var(--petrole);
-  border-bottom: 2px solid var(--bordure);
-  padding-bottom: 5px;
-  margin-bottom: 20px;
-}
-
-/* --- FICHE LEXIQUE --- */
-.lexique-card {
-  background: var(--bg-card);
-  border: 1px solid var(--bordure);
-  border-left: 6px solid var(--petrole); /* Rappel de ton style de nav active */
-  padding: 15px;
-  margin-bottom: 15px;
-  transition: all 0.3s ease;
-}
-
-.lexique-card:hover {
-  transform: translateX(5px); /* Petit décalage vers la droite */
-  border-left-color: var(--rose);
-  box-shadow: var(--ombre);
-}
-
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px dashed var(--bordure);
-  margin-bottom: 10px;
-  padding-bottom: 5px;
-}
-
-
-.badge-tech {
-  font-size: 10px;
-  background: var(--givre-pale);
-  color: var(--petrole);
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-weight: bold;
-}
-
-/* --- GRILLE DE RÉGLAGES --- */
-.settings-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 10px;
-  list-style: none;
-  padding: 0;
-  margin: 10px 0;
-  font-size: 13px;
-}
-
-.settings-grid li {
-  background: var(--bg-page);
-  padding: 5px 8px;
-  border-radius: 4px;
-  border-bottom: 1px solid var(--bordure);
-}
-
-.card-note {
-  font-size: 12px;
-  font-style: italic;
-  color: var(--texte-muted);
-  border-top: 1px solid var(--bg-page);
-  padding-top: 5px;
-}
-
+.lilas { background: var(--lilas); } .rose { background: var(--rose); } .terre { background: var(--terre); } .givre { background: var(--givre); } .tempete { background: var(--tempete); } .petrole { background: var(--petrole); } .lilas-pale { background: var(--lilas-pale); } .givre-pale { background: var(--givre-pale); } .terre-pale { background: var(--terre-pale); } .bg-outer { background: var(--bg-outer); } .bg-page { background: var(--bg-page); } .bg-card { background: var(--bg-card); } .texte-soft { background: var(--texte-soft); } .texte-muted { background: var(--texte-muted); } .bordure { background: var(--bordure); } .bordure-forte { background: var(--bordure-forte); } .C-ombre { background: var(--texte-muted); opacity: 0.1; } .C-ombre-forte { background: var(--texte-muted); opacity: 0.2; }

@@ -1,34 +1,33 @@
 :root {
-  /* ── Accents ── */
-  --lilas:          #CDA8CC;
-  --lilas-pale:     #EDE4ED;
-  --rose:           #A45166;
-  --tempete:        #4C6092;
-  --petrole:        #20576C;
-  --givre:          #79B7BF;
-  --givre-pale:     #D6E9EC;
-  --terre:          #511A00;
-  --terre-pale:     #F0DDD5;
-  /* ── Fonds — hiérarchie page ── */
-  --bg-outer:       #DDDBD4;
-  --bg-page:        #F0EEE8;
-  --bg-card:        #FAFAF7;
-  /* ── Texte ── */
-  --texte:          #1E1E1E;
-  --texte-soft:     #4A4845;
-  --texte-muted:    #8C8A86;
-  /* ── Bordures ── */
-  --bordure:        #C8C5BE;
-  --bordure-forte:  #7A7874;
-  /* -- Ombre --*/
-  --ombre:       0 2px 8px  rgba(30, 20, 15, 0.10);
-  --ombre-forte: 0 4px 16px rgba(30, 20, 15, 0.18);
-  --C-ombre:       #1E140F;
-  --C-ombre-forte: #1E140F;
-  /* ── Typographie ── */
-  --font-title:     'catchy-mager', sans-serif;
-  --font-body:      system-ui;
-}
+    /* ── Accents ── */
+    --lilas:          #CDA8CC;
+    --lilas-pale:     #EDE4ED;
+    --rose:           #A45166;
+    --tempete:        #4C6092;
+    --petrole:        #20576C;
+    --givre:          #79B7BF;
+    --givre-pale:     #D6E9EC;
+    --terre:          #511A00;
+    --terre-pale:     #F0DDD5;
+    /* ── Fonds — hiérarchie page ── */
+    --bg-outer:       #DDDBD4;
+    --bg-page:        #F0EEE8;
+    --bg-card:        #FAFAF7;
+    /* ── Texte ── */
+    --texte:          #1E1E1E;
+    --texte-soft:     #4A4845;
+    --texte-muted:    #8C8A86;
+    /* ── Bordures ── */
+    --bordure:        #C8C5BE;
+    --bordure-forte:  #7A7874;
+    /* -- Ombre --*/
+    --ombre:       0 2px 8px  rgba(30, 20, 15, 0.10);
+    --ombre-forte: 0 4px 16px rgba(30, 20, 15, 0.18);
+    --C-ombre:       #1E140F;
+    --C-ombre-forte: #1E140F;
+    /* ── Typographie ── */
+    --font-title:     'catchy-mager', sans-serif;
+    --font-body:      system-ui;}
 
 /*-- OVERALL --*/
     /* polices */
@@ -105,5 +104,86 @@
     /* Pour le contenu, on reste sobre */
     .db-content { font-size: 13px; color: var(--texte-muted);margin-left: 10px;}
 
+/* --- LAYOUT LEXIQUE --- */
+.lexique-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
 
+.cat-title {
+  font-family: var(--font-title);
+  font-size: 1.4rem;
+  color: var(--petrole);
+  border-bottom: 2px solid var(--bordure);
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+/* --- FICHE LEXIQUE --- */
+.lexique-card {
+  background: var(--bg-card);
+  border: 1px solid var(--bordure);
+  border-left: 6px solid var(--petrole); /* Rappel de ton style de nav active */
+  padding: 15px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.lexique-card:hover {
+  transform: translateX(5px); /* Petit décalage vers la droite */
+  border-left-color: var(--rose);
+  box-shadow: var(--ombre);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed var(--bordure);
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+
+.card-header h4 {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--texte-soft);
+}
+
+.badge-tech {
+  font-size: 10px;
+  background: var(--givre-pale);
+  color: var(--petrole);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* --- GRILLE DE RÉGLAGES --- */
+.settings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  font-size: 13px;
+}
+
+.settings-grid li {
+  background: var(--bg-page);
+  padding: 5px 8px;
+  border-radius: 4px;
+  border-bottom: 1px solid var(--bordure);
+}
+
+.card-note {
+  font-size: 12px;
+  font-style: italic;
+  color: var(--texte-muted);
+  border-top: 1px solid var(--bg-page);
+  padding-top: 5px;
+}
 

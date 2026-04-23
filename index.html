@@ -3,57 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href=".img/favicon.png">
   <link rel="stylesheet" href="style.css">
-  <title>dashboard — iceolie</title>
+  <title>Dashboard — Iceolie</title>
 </head>
 <body>
+  <header class="top-bar">
+    <a href="index.html" class="logo"><img src="img/ICEOLIE-HEADER.png" alt="iceolie"></a>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-link active">Dashboard</a>
+      <a href="lexique.html" class="nav-link">Lexique</a>
+      <a href="projets.html" class="nav-link">Projets</a>
+      <a href="admin.html" class="nav-link">Admin</a>
+      <a href="couleurs.html" class="nav-link">Couleurs</a>
+    </nav>
+  </header>
 
-<header class="site-header"">
-  <div class="top-bar">
-<a href="index.html" class="logo"><img src="img/ICEOLIE-HEADER.png" alt="iceolie"></a>
-  <nav class="main-nav">
-    <a href="index.html" class="nav-link active">Dashboard</a>
-    <a href="lexique.html" class="nav-link">Lexique</a>
-    <a href="projets.html" class="nav-link">Projets</a>
-    <a href="admin.html" class="nav-link">Admin</a>
-    <a href="couleurs.html" class="nav-link">Couleurs</a>
-  </nav>
-  </div>
-</header>
-  
   <h1>Dashboard</h1>
-<main class="page-content">
-  <h2>Bienvenue à la maison !</h2>
-  
- <div class="dashboard-grid">
-  <section class="db-card border-lilas">
-    <h3>Saturn 4 Ultra</h3>
-    <div class="db-content">
-      <p>Statut : <span class="status-ready">Prête</span></p>
-      <p>Dernier bac : Résine Grise</p>
-    </div>
-  </section>
+  <main class="page-content">
+    <h2>Bienvenue à la maison !</h2>
+    <div class="grid-layout">
+      <section class="card">
+        <h3>Saturn 4 Ultra</h3>
+        <p>Statut : <span style="color: var(--givre); font-weight: bold;">Prête</span></p>
+        <p style="font-size: 13px; color: var(--texte-muted);">Dernier bac : Résine Grise</p>
+      </section>
 
-  <section class="db-card border-rose">
-    <h3>Codex Learning</h3>
-    <div class="db-content">
-      <p class="highlight">Dernière notion : <strong>CSS Grid</strong></p>
-      <a href="lexique.html" class="btn-text">Ouvrir le lexique →</a>
-    </div>
-  </section>
+      <section class="card">
+        <h3>Codex Learning</h3>
+        <p style="font-size: 13px;">Dernière notion : <strong>CSS Grid</strong></p>
+        <a href="lexique.html" style="font-size: 12px; color: var(--rose);">Ouvrir le lexique →</a>
+      </section>
 
-  <section class="db-card border-tempete">
-    <h3>Business Admin</h3>
-    <div class="db-content">
-      <ul class="mini-list">
-        <li>Mise à jour du stock</li>
-        <li>Relance factures</li>
-      </ul>
+      <section class="card">
+        <h3>Business Admin</h3>
+        <ul class="mini-list">
+          <li>Mise à jour du stock</li>
+          <li>Relance factures</li>
+        </ul>
+      </section>
     </div>
-  </section>
-</div>
-
-</main>
-  </body>
+  </main>
+</body>
 </html>

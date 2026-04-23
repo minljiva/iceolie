@@ -40,7 +40,7 @@
     h2 {font-family: var(--font-title); font-size: 22rem; font-weight: 500; color: var(--texte-muted); margin-top: 0px; border-bottom: 2px dashed var(--bordure);  padding-bottom: 0px; line-height: 1; /* colle la bordure au texte */}
     h3 {font-family: var(--font-title); font-size: 18rem; Padding-bottom: 0px; line-height: 1; margin-top: -3px; color: var(--texte-soft); margin-bottom: 5px; padding-left: 10px; border-left: 4px solid var(--rose); /* Rappel de ta barre de côté "active" */ display: block;}
     h4 {font-family: var(--font-title);  font-size: 18px; color: var(--petrole); padding-bottom: 0px; line-height: 1; border-bottom: 2px solid var(--bordure-forte); text-align: left; margin-right: 20px; margin-bottom: 5px; width: 100%; }
-    h5 { margin: 0; font-family: var(--font-body); font-weight: 700; color: var(--texte-soft);
+    h5 { margin: 0; font-family: var(--font-body); font-weight: 700; color: var(--texte-soft);}
     p  { margin: 5px 2px; }
     /* liens */
     a { color: var(--petrole); text-decoration: none; transition: color 0.15s; }

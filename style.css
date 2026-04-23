@@ -95,10 +95,16 @@ a:hover { color: var(--terre); transform: translateY(-2px);}
 .petrole { background: var(--petrole); }
 .givre { background: var(--givre); }
 .terre { background: var(--terre); }
+.bg-outer { background: var(--bg-outer); }
 .bg-page { background: var(--bg-page); }
 .bg-card { background: var(--bg-card); }
 .texte { background: var(--texte); }
+.texte-soft { background: var(--texte-soft); }
+.texte-muted { background: var(--texte-muted); }
 .bordure { background: var(--bordure); }
+.bordure-forte { background: var(--bordure-forte); }
+.ombre { background: var(--ombre); }
+.ombre-forte { background: var(--ombre-forte); }
 
 /* PAGE INDEX */
 .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; padding: 10px; background-color : var(--bg-page);}

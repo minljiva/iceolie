@@ -40,6 +40,8 @@ a:hover { color: var(--terre); transform: translateY(-2px); }
 .hero-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
 .hero-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
 .hero-stat { font-size: 12px; padding: 8px; background: rgba(255, 255, 255, 0.5); border-radius: 5px; border: 1px dashed var(--bordure); color: var(--texte-soft); }
+.card-hero:hover { border-left: 6px solid var(--givre); transform: translateY(-2px); border-radius: 7px; box-shadow: var(--ombre-forte); }
+.card-hero:hover::before, .card-hero:hover::after { width: 0; height: 0; border: none; }
 
 .content-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px dashed var(--bordure); margin-bottom: 20px; gap: 15px; }
 .content-header h2 { border-bottom: none; margin-bottom: 0; flex-shrink: 0; }

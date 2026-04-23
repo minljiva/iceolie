@@ -77,8 +77,20 @@ if (adminForm) {
 }
 
 // ── 5. OVERLAY ──
-function openOverlay() { document.getElementById('adminOverlay').classList.add('active'); }
-function closeOverlay() { document.getElementById('adminOverlay').classList.remove('active'); }
-
+function openOverlay() {
+  const overlay = document.getElementById('adminOverlay');
+  if (overlay) {
+    overlay.classList.add('open'); // On utilise .open comme dans ton CSS
+    console.log("L'overlay est maintenant ouvert");
+  } else {
+    console.error("L'élément adminOverlay est introuvable");
+  }
+}
+function closeOverlay() {
+  const overlay = document.getElementById('adminOverlay');
+  if (overlay) {
+    overlay.classList.remove('open');
+  }
+}
 // Lancement
 document.addEventListener('DOMContentLoaded', fetchTasks);

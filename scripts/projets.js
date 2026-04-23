@@ -33,7 +33,8 @@ function renderProjects(data) {
     container.innerHTML = data.map(proj => `
         <div class="project-card">
 <div class="project-image" style="background-image: url('${proj.projInfos || 'https://via.placeholder.com/300x200'}')"></div>
-<small>${proj.projCat || 'Inspiration'}</small>
+<small>${proj.projCat || 'Inspiration'}</small> <button class="btn-filter" onclick="event.stopPropagation(); supprimerProjet('${p.id}')">✕</button>
+            </div>
 <h3>${proj.projTitle || 'Sans titre'}</h3>
 <a href="${proj.projLink}" target="_blank" class="project-link">Ouvrir le lien →</a>
             </div>

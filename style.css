@@ -25,8 +25,8 @@ body { background: var(--bg-page); font-family: system-ui, -apple-system, sans-s
   border-top: 4px solid var(--petrole); /* Un rappel de ta couleur forte en haut */
   border-radius: 20px 20px 0 0; /* Arrondi uniquement en haut */
   
-  padding: 40px;
-  margin-top: 30px;
+  padding: 20px;
+  margin-top: -5px;
   min-height: 80vh; /* Pour qu'il descende bien jusqu'en bas de l'écran */
   box-shadow: 0 -10px 25px rgba(0,0,0,0.03); /* Petite ombre vers le haut pour l'effet de feuille posée */
   
@@ -39,8 +39,8 @@ body { background: var(--bg-page); font-family: system-ui, -apple-system, sans-s
 .page-content h2 {
   margin-top: 0;
   border-bottom: 2px dashed var(--givre); /* Utilise ton bleu givre pour le tiret */
-  padding-bottom: 15px;
-  margin-bottom: 30px;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 /* titre */

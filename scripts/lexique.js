@@ -1,3 +1,4 @@
+alert("Le JS est bien chargé !");
 /* --- 1. DONNÉES --- */
 const codexData = [
   { title: "Configuration Saturn 4 Ultra", cat: "Machine", isHero: true, details: ["Écran : 10\" 12K Mono", "Volume : 218x122x220mm"], note: "Hardware" },

@@ -32,11 +32,10 @@ function renderProjects(data) {
 
     container.innerHTML = data.map(proj => `
         <div class="project-card">
-            <div class="project-image" style="background-image: url('${proj.infos || 'https://via.placeholder.com/300x200'}')"></div>
-            <div class="project-info">
-                <small>${proj.cat || 'Inspiration'}</small>
-                <h3>${proj.title || 'Sans titre'}</h3>
-                <a href="${proj.link}" target="_blank" class="project-link">Ouvrir le lien →</a>
+<div class="project-image" style="background-image: url('${proj.projInfos || 'https://via.placeholder.com/300x200'}')"></div>
+<small>${proj.projCat || 'Inspiration'}</small>
+<h3>${proj.projTitle || 'Sans titre'}</h3>
+<a href="${proj.projLink}" target="_blank" class="project-link">Ouvrir le lien →</a>
             </div>
         </div>
     `).join('');
@@ -48,12 +47,12 @@ if (projectForm) {
     projectForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const newProject = {
-            title: document.getElementById('projTitle').value,
-            link: document.getElementById('projLink').value,
-            infos: document.getElementById('projImg').value,
-            cat: 'Inspiration'
-        };
+ const newProject = {
+    projTitle: document.getElementById('projTitle').value,
+    projLink:  document.getElementById('projLink').value,
+    projInfos: document.getElementById('projImg').value,
+    projCat:   'Inspiration'
+};
 
         const { error } = await _supabase.from('iceolie_projets').insert([newProject]);
 

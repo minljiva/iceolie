@@ -30,85 +30,80 @@
   --font-body:      system-ui;
 }
 
-/* polices */
-  @font-face { font-family: 'catchy-mager'; src: url('./font/catchy-mager.otf') format('opentype');}
-
-/* body */
-body { background: var(--bg-outer); font-family: system-ui, -apple-system, sans-serif; color: var(--texte);  padding: 2rem 0; max-width: 780px;margin: 0 auto; line-height: 1.6;}
-.page-content { background: var(--bg-page); /* Ou une couleur très légèrement différente de var(--bg-page) */ border: 1px solid var(--bordure); border-top: 2px solid var(--bordure-forte); /* Un rappel de ta couleur forte en haut */ border-radius: 20px 20px 0 0; /* Arrondi uniquement en haut */ padding: 20px; padding-top: 5px; margin-top: -15px; min-height: 80vh; /* Pour qu'il descende bien jusqu'en bas de l'écran */ box-shadow: 0 -10px 25px var(--ombre); /* Petite ombre vers le haut pour l'effet de feuille posée */ max-width: 900px; /* Un peu plus large que ton header pour donner du souffle */ margin-left: auto; margin-right: auto;}
-
-/* titre */
-h1 {font-family: var(--font-title); font-size: 33px; color: var(--texte-soft); box-shadow: 2px 2px 0px var(--ombre); font-weight: 500; text-align: center; margin-bottom: 0rem; margin-top: -20px; }
-h2 {font-family: var(--font-title); font-size: 1.2rem; font-weight: 500; color: var(--texte-muted); margin-top: -5px; border-bottom: 2px dashed var(--bordure);  padding-bottom: -15px; /* colle la bordure au texte */}
-p  { margin: 5px 2px; }
-
-/* liens */
-a { color: var(--petrole); text-decoration: none; transition: color 0.15s; }
-a:hover { color: var(--terre); transform: translateY(-2px);}
+/*-- OVERALL --*/
+    /* polices */
+    @font-face { font-family: 'catchy-mager'; src: url('./font/catchy-mager.otf') format('opentype');}
+    /* body */
+    body { background: var(--bg-outer); font-family: system-ui, -apple-system, sans-serif; color: var(--texte);  padding: 2rem 0; max-width: 780px;margin: 0 auto; line-height: 1.6;}
+    .page-content { background: var(--bg-page); /* Ou une couleur très légèrement différente de var(--bg-page) */ border: 1px solid var(--bordure); border-top: 2px solid var(--bordure-forte); /* Un rappel de ta couleur forte en haut */ border-radius: 20px 20px 0 0; /* Arrondi uniquement en haut */ padding: 20px; padding-top: 5px; margin-top: -15px; min-height: 80vh; /* Pour qu'il descende bien jusqu'en bas de l'écran */ box-shadow: 0 -10px 25px var(--ombre); /* Petite ombre vers le haut pour l'effet de feuille posée */ max-width: 900px; /* Un peu plus large que ton header pour donner du souffle */ margin-left: auto; margin-right: auto;}
+    /* titre */
+    h1 {font-family: var(--font-title); font-size: 33px; color: var(--texte-soft); box-shadow: 2px 2px 0px var(--ombre); font-weight: 500; text-align: center; margin-bottom: 0rem; margin-top: -20px; }
+    h2 {font-family: var(--font-title); font-size: 1.2rem; font-weight: 500; color: var(--texte-muted); margin-top: -5px; border-bottom: 2px dashed var(--bordure);  padding-bottom: -15px; /* colle la bordure au texte */}
+    p  { margin: 5px 2px; }
+    /* liens */
+    a { color: var(--petrole); text-decoration: none; transition: color 0.15s; }
+    a:hover { color: var(--terre); transform: translateY(-2px);}
 
 /*-- NAVIGATION --*/
-.top-bar { display: flex; justify-content:space-between; /* Le logo à gauche, la nav à droite */ align-items: center;      /* Aligne les deux parfaitement au milieu (hauteur) */ max-width: 780px;         /* Aligné sur la largeur de ton site */ margin: 0 auto;           /* Centré dans la page */ padding: 10px 0;}
-.logo img { display: block; max-width: 150px; height: auto;}
-.main-nav { display: flex; gap: 5px; border-bottom: none;  margin-bottom: 0; font-size: 12px;}
-.nav-link { position: relative; padding: 3px 5px; color: var(--petrole); text-decoration: none;}
-/* On crée les coins avec avant/après */
-.nav-link::before, .nav-link::after { content: ""; position: absolute; width: 0; height: 0; border: 0 solid var(--bordure-forte); transition: all 0.3s ease;}
-/* Coin haut-gauche */
-.nav-link::before { top: 0; left: 0;}
-/* Coin bas-droite */
-.nav-link::after { bottom: 0; right: 0;}
-.nav-link:hover::before { width: 9px; height: 9px; border-top-width: 2px; border-left-width: 2px;}
-.nav-link:hover::after { width: 9px; height: 9px; border-bottom-width: 2px; border-right-width: 2px;}
-.nav-link.active { border-radius: 7px; color: var(--bg-outer); background-color: var(--texte-soft); /* Couleur plus forte pour la page actuelle */}
+    .top-bar { display: flex; justify-content:space-between; /* Le logo à gauche, la nav à droite */ align-items: center;      /* Aligne les deux parfaitement au milieu (hauteur) */ max-width: 780px;         /* Aligné sur la largeur de ton site */ margin: 0 auto;           /* Centré dans la page */ padding: 10px 0;}
+    .logo img { display: block; max-width: 150px; height: auto;}
+    .main-nav { display: flex; gap: 5px; border-bottom: none;  margin-bottom: 0; font-size: 12px;}
+    .nav-link { position: relative; padding: 3px 5px; color: var(--petrole); text-decoration: none;}
+    /* On crée les coins avec avant/après */
+    .nav-link::before, .nav-link::after { content: ""; position: absolute; width: 0; height: 0; border: 0 solid var(--bordure-forte); transition: all 0.3s ease;}
+    /* Coin haut-gauche */
+    .nav-link::before { top: 0; left: 0;}
+    /* Coin bas-droite */
+    .nav-link::after { bottom: 0; right: 0;}
+    .nav-link:hover::before { width: 9px; height: 9px; border-top-width: 2px; border-left-width: 2px;}
+    .nav-link:hover::after { width: 9px; height: 9px; border-bottom-width: 2px; border-right-width: 2px;}
+    .nav-link.active { border-radius: 7px; color: var(--bg-outer); background-color: var(--texte-soft); /* Couleur plus forte pour la page actuelle */}
 
 /*-- PAGE COULEUR -- */
-.palette {display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 1000px; margin: 0 auto; border-bottom: 2px solid var(--bordure);}
-.palette-group { display: flex; flex-direction: column; align-items: center; width: 100%; margin-bottom: 5px; }
-.palette-title { font-family: var(--font-title);  font-size: 18px; padding-bottom: -7px; border-bottom: 2px solid var(--bordure-forte); text-align: left; margin-right: 20px; margin-bottom: 5px; width: 100%; }
-.color-card { background: var(--bg-card); border-radius: 12px; padding: 10px; margin-bottom: 5px; border: 1px solid var(--bordure); transition: transform 0.15s ease, box-shadow 0.15s ease; display: flex; flex-direction: column; align-items: center; text-align: center; width: 130px; }
-.color-box {  width: 100%; height: 80px; color: var(--texte-soft); border-radius: 10px;  margin-bottom: 2px; box-shadow: inset 0 0 0 1px var(--bordure);}
-.cards-container-accent { display: grid; grid-template-columns: repeat(3, 1fr);   /* Crée 3 colonnes de taille égale (1fr = 1 fraction) */ justify-items: center; gap: 25px; width: 100%;}
-.cards-container-soft { display: grid; grid-template-columns: repeat(2, 1fr);   /* Crée 3 colonnes de taille égale (1fr = 1 fraction) */ justify-items: center;  gap: 25px; width: 100%;}
-.lilas { background: var(--lilas); }
-.lilas-pale { background: var(--lilas-pale); }
-.rose { background: var(--rose); }
-.tempete { background: var(--tempete); }
-.petrole { background: var(--petrole); }
-.givre { background: var(--givre); }
-.givre-pale { background: var(--givre-pale); }
-.terre { background: var(--terre); }
-.terre-pale { background: var(--terre-pale); }
-.bg-outer { background: var(--bg-outer); }
-.bg-page { background: var(--bg-page); }
-.bg-card { background: var(--bg-card); }
-.texte { background: var(--texte); }
-.texte-soft { background: var(--texte-soft); }
-.texte-muted { background: var(--texte-muted); }
-.bordure { background: var(--bordure); }
-.bordure-forte { background: var(--bordure-forte); }
-.C-ombre { background: var(--C-ombre); }
-.C-ombre-forte { background: var(--C-ombre-forte); }
+    .palette {display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 1000px; margin: 0 auto; border-bottom: 2px solid var(--bordure);}
+    .palette-group { display: flex; flex-direction: column; align-items: center; width: 100%; margin-bottom: 5px; }
+    .palette-title { font-family: var(--font-title);  font-size: 18px; padding-bottom: -7px; border-bottom: 2px solid var(--bordure-forte); text-align: left; margin-right: 20px; margin-bottom: 5px; width: 100%; }
+    .color-card { background: var(--bg-card); border-radius: 12px; padding: 10px; margin-bottom: 5px; border: 1px solid var(--bordure); transition: transform 0.15s ease, box-shadow 0.15s ease; display: flex; flex-direction: column; align-items: center; text-align: center; width: 130px; }
+    .color-box {  width: 100%; height: 80px; color: var(--texte-soft); border-radius: 10px;  margin-bottom: 2px; box-shadow: inset 0 0 0 1px var(--bordure);}
+    .cards-container-accent { display: grid; grid-template-columns: repeat(3, 1fr);   /* Crée 3 colonnes de taille égale (1fr = 1 fraction) */ justify-items: center; gap: 25px; width: 100%;}
+    .cards-container-soft { display: grid; grid-template-columns: repeat(2, 1fr);   /* Crée 3 colonnes de taille égale (1fr = 1 fraction) */ justify-items: center;  gap: 25px; width: 100%;}
+    .lilas { background: var(--lilas); }
+    .lilas-pale { background: var(--lilas-pale); }
+    .rose { background: var(--rose); }
+    .tempete { background: var(--tempete); }
+    .petrole { background: var(--petrole); }
+    .givre { background: var(--givre); }
+    .givre-pale { background: var(--givre-pale); }
+    .terre { background: var(--terre); }
+    .terre-pale { background: var(--terre-pale); }
+    .bg-outer { background: var(--bg-outer); }
+    .bg-page { background: var(--bg-page); }
+    .bg-card { background: var(--bg-card); }
+    .texte { background: var(--texte); }
+    .texte-soft { background: var(--texte-soft); }
+    .texte-muted { background: var(--texte-muted); }
+    .bordure { background: var(--bordure); }
+    .bordure-forte { background: var(--bordure-forte); }
+    .C-ombre { background: var(--C-ombre); }
+    .C-ombre-forte { background: var(--C-ombre-forte); }
 
 /* PAGE INDEX */
-.dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; padding: 10px;}
-.db-card { background: var(--bg-card); padding: 10px; border-radius: 7px; position: relative; /* On garde un arrondi léger mais on mise sur la bordure */ border: 1px solid var(--bordure); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); box-shadow: 4px 4px 0px var(--ombre-forte); }
-
-/* On ajoute un petit "voyant" lumineux pour le statut */
-.db-card::before, .db-card::after { content: ""; position: absolute; width: 0; height: 0; border: 0 solid var(--bordure); /* Couleur pétrole comme ta nav */ transition: all 0.4s ease;}
-/* Coin haut-gauche */
-.db-card::before { top: 0; left: 0; }
-/* Coin bas-droite */
-.db-card::after { bottom: 0; right: 0; }
-/* Animation au survol de la carte */
-.db-card:hover {border-radius: 0px; transform: translate(-2px, -2px); /* Petit décalage pour l'effet 3D */ box-shadow: 5px 5px 0px var(--givre); /* L'ombre devient colorée */ border-color: var(--bordure);}
-.db-card:hover::before { width: 25px; height: 25px; border-top-width: 3px; border-left-width: 3px;}
-.db-card:hover::after { width: 25px; height: 25px; border-bottom-width: 3px; border-right-width: 3px;}
-
-/* Le titre H3 typé "Technique" */
-.db-card h3 { font-family: var(--font-title); font-size: 1.2rem; Padding-bottom: -15px; margin-top: -10px; color: var(--texte-soft); margin-bottom: 5px; padding-left: 10px; border-left: 4px solid var(--rose); /* Rappel de ta barre de côté "active" */ display: block;}
-
-/* Pour le contenu, on reste sobre */
-.db-content { font-size: 13px; color: var(--texte-muted);margin-left: 10px;}
+    .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; padding: 10px;}
+    .db-card { background: var(--bg-card); padding: 10px; border-radius: 7px; position: relative; /* On garde un arrondi léger mais on mise sur la bordure */ border: 1px solid var(--bordure); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); box-shadow: 4px 4px 0px var(--ombre-forte); }
+    /* On ajoute un petit "voyant" lumineux pour le statut */
+    .db-card::before, .db-card::after { content: ""; position: absolute; width: 0; height: 0; border: 0 solid var(--bordure); /* Couleur pétrole comme ta nav */ transition: all 0.4s ease;}
+    /* Coin haut-gauche */
+    .db-card::before { top: 0; left: 0; }
+    /* Coin bas-droite */
+    .db-card::after { bottom: 0; right: 0; }
+    /* Animation au survol de la carte */
+    .db-card:hover {border-radius: 0px; transform: translate(-2px, -2px); /* Petit décalage pour l'effet 3D */ box-shadow: 5px 5px 0px var(--givre); /* L'ombre devient colorée */ border-color: var(--bordure);}
+    .db-card:hover::before { width: 25px; height: 25px; border-top-width: 3px; border-left-width: 3px;}
+    .db-card:hover::after { width: 25px; height: 25px; border-bottom-width: 3px; border-right-width: 3px;}
+    /* Le titre H3 typé "Technique" */
+    .db-card h3 { font-family: var(--font-title); font-size: 1.2rem; Padding-bottom: -15px; margin-top: -10px; color: var(--texte-soft); margin-bottom: 5px; padding-left: 10px; border-left: 4px solid var(--rose); /* Rappel de ta barre de côté "active" */ display: block;}
+    /* Pour le contenu, on reste sobre */
+    .db-content { font-size: 13px; color: var(--texte-muted);margin-left: 10px;}
 
 
 

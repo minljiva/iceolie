@@ -3,60 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href=".img/favicon.png">
   <link rel="stylesheet" href="style.css">
-  <title>lexique — iceolie</title>
+  <title>Couleurs — Iceolie</title>
 </head>
 <body>
-
-<header class="site-header"">
-  <div class="top-bar">
-<a href="index.html" class="logo"><img src="img/ICEOLIE-HEADER.png" alt="iceolie"></a>
-  <nav class="main-nav">
-    <a href="index.html" class="nav-link">Dashboard</a>
-    <a href="lexique.html" class="nav-link active">Lexique</a>
-    <a href="projets.html" class="nav-link">Projets</a>
-    <a href="admin.html" class="nav-link">Admin</a>
-    <a href="couleurs.html" class="nav-link">Couleurs</a>
-  </nav>
-  </div>
+  <header class="top-bar">
+    <a href="index.html" class="logo"><img src="img/ICEOLIE-HEADER.png" alt="iceolie"></a>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-link">Dashboard</a>
+      <a href="lexique.html" class="nav-link active">Lexique</a>
+      <a href="projets.html" class="nav-link">Projets</a>
+      <a href="admin.html" class="nav-link">Admin</a>
+      <a href="couleurs.html" class="nav-link">Couleurs</a>
+    </nav>
+  </header>
 
   <h1>Lexique</h1>
   <main class="page-content">
   <h2>Se souvenir de tout ce que l'on à chercher</h2>
 
-  <div class="palette-group">
-    <section class="lexique-category">
-      <h4>Résines Standard & ABS-Like</h4>
-      
-      <article class="lexique-card">
-        <header class="card-header">
-          <h3>Sunlu ABS-Like (Grey)</h3>
-          <span class="badge-tech">SLA / LCD</span>
-        </header>
-        <div class="card-body">
-          <ul class="settings-grid">
-            <li><strong>Exposition :</strong> 2.5s</li>
-            <li><strong>Bottom Layers :</strong> 5</li>
-            <li><strong>Levage :</strong> 7mm/min</li>
-          </ul>
-          <p class="card-note">Idéale pour les figurines solides. Attention à la température (min 20°C).</p>
-        </div>
-      </article>
-    </section>
-
-    <section class="lexique-category">
-      <h4>Paramétrage Machine</h4>
-      <article class="lexique-card">
-        <header class="card-header">
-          <h3>Anti-Aliasing (AA)</h3>
-        </header>
-        <div class="card-body">
-          <p>Technique permettant de lisser les "marches d'escalier" sur les arrondis en créant des pixels intermédiaires de gris.</p>
-        </div>
-      </article>
-    </section>
-  </div>
-</main>
-
+  <input type="text" id="searchInput" placeholder="Rechercher...">
+  <div id="lexiqueContainer" class="grid-layout">test</div>
+    
   </main></body></html>

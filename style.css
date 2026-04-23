@@ -52,12 +52,9 @@ body { background: var(--bg-outer); font-family: system-ui, -apple-system, sans-
   margin-right: auto;
 }
 
-/* On ajuste le H2 pour qu'il s'intègre parfaitement dedans */
-.page-content h2 { border-bottom: 2px dashed var(--bordure-forte); /* Utilise ton bleu givre pour le tiret */ padding-bottom: 0;}
-
 /* titre */
 h1 {font-family: var(--font-title); font-size: 33px; color: var(--texte-muted); font-weight: 500; text-align: center; margin-bottom: 0rem; margin-top: -20px; }
-h2 {font-family: var(--font-title); font-size: 1.2rem; font-weight: 500; color: var(--texte-soft); margin-top: -5px; border-bottom: 2px dashed var(--bordure-forte);}
+h2 {font-family: var(--font-title); font-size: 1.2rem; font-weight: 500; color: var(--texte-soft); margin-top: -5px; border-bottom: 2px dashed var(--bordure-forte);  padding-bottom: 4px; /* colle la bordure au texte */}
 p  { margin: 5px 2px; }
 
 /* liens */
@@ -82,7 +79,7 @@ a:hover { color: var(--terre); transform: translateY(-2px);}
 /*-- PAGE COULEUR -- */
 .palette {display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 1000px; margin: 0 auto; border-bottom: 2px solid var(--bordure);}
 .palette-group { display: flex; flex-direction: column; align-items: center; width: 100%; margin-bottom: 5px; }
-.palette-title { font-family: var(--font-title);  font-size: 18px; margin-top: 5px; padding-bottom: 6px; border-bottom: 2px solid var(--bordure-forte); text-align: left; margin-right: 20px; margin-bottom: 5px; width: 100%;}
+.palette-title { font-family: var(--font-title);  font-size: 18px; margin-top: 5px; padding-bottom: 3px; border-bottom: 2px solid var(--bordure-forte); text-align: left; margin-right: 20px; margin-bottom: 5px; width: 100%; }
 .color-card { background: var(--bg-card); border-radius: 12px; padding: 10px; margin-bottom: 5px; border: 1px solid var(--bordure); transition: transform 0.15s ease, box-shadow 0.15s ease; display: flex; flex-direction: column; align-items: center; text-align: center; width: 130px; }
 .color-box {  width: 100%; height: 80px;  border-radius: 10px;  margin-bottom: 2px; box-shadow: inset 0 0 0 1px var(--bordure);}
 .cards-container-accent { display: grid; grid-template-columns: repeat(3, 1fr);   /* Crée 3 colonnes de taille égale (1fr = 1 fraction) */ justify-items: center; gap: 25px; width: 100%;}

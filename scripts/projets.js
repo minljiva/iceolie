@@ -46,9 +46,10 @@ if (projectForm) {
     e.preventDefault();
 
     const newProject = {
-      title: document.getElementById('projTitle').value,
-      link: document.getElementById('projLink').value,
-      img: document.getElementById('projImg').value
+      title: document.getElementById('title').value,
+      link: document.getElementById('link').value,
+      infos: document.getElementById('infos').value
+      cat: document.getElementById('cat').value
     };
 
     const { error } = await _supabase.from('projects').insert([newProject]);

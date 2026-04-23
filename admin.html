@@ -3,47 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href=".img/favicon.png">
+  <link rel="icon" type="image/png" href="img/favicon.png">
   <link rel="stylesheet" href="style.css">
-  <title>admin — iceolie</title>
+  <title>Admin — Iceolie</title>
 </head>
 <body>
 
-<header class="site-header"">
+<header class="site-header">
   <div class="top-bar">
-<a href="index.html" class="logo"><img src="img/ICEOLIE-HEADER.png" alt="iceolie"></a>
-  <nav class="main-nav">
-    <a href="index.html" class="nav-link">Dashboard</a>
-    <a href="lexique.html" class="nav-link">Lexique</a>
-    <a href="projets.html" class="nav-link">Projets</a>
-    <a href="admin.html" class="nav-link active">Admin</a>
-    <a href="couleurs.html" class="nav-link">Couleurs</a>
-  </nav>
+    <a href="index.html" class="logo"><img src="img/ICEOLIE-HEADER.png" alt="iceolie"></a>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-link">Dashboard</a>
+      <a href="lexique.html" class="nav-link">Lexique</a>
+      <a href="projets.html" class="nav-link">Projets</a>
+      <a href="admin.html" class="nav-link active">Admin</a>
+      <a href="couleurs.html" class="nav-link">Couleurs</a>
+    </nav>
   </div>
+</header>
 
-  <h1>Administratif</h1>
+<h1>Administratif</h1>
+
 <main class="page-content">
   <div class="content-header">
     <h2>Ne rien oublier pour avoir une entreprise prospère</h2>
+    <button class="btn-add" onclick="openOverlay()">+ Ajouter une tâche</button>
   </div>
 
-  <div class="grid-layout">
-    <section class="card">
-      <h3>📁 Documents Clés</h3>
-      <ul class="mini-list" id="docsList">
-        <li><span>Statuts entreprise</span> <a href="#" class="nav-link" style="padding:0">Ouvrir</a></li>
-        <li><span>Attestation URSSAF</span> <a href="#" class="nav-link" style="padding:0">Ouvrir</a></li>
-        <li><span>RIB Professionnel</span> <a href="#" class="nav-link" style="padding:0">Ouvrir</a></li>
-      </ul>
-      <button class="btn-filter active" style="width:100%; margin-top:15px; font-size:11px;">+ Ajouter un document</button>
-    </section>
-
-    <section class="card">
-      <h3>📅 Rappels & Obligations</h3>
-      <div id="adminTasks">
-        </div>
-    </section>
+  <div id="adminTasks" class="grid-layout">
+    <p>Chargement des obligations...</p>
   </div>
 </main>
 
-<script src="./scripts/admin.js"></script></body></html>
+<div id="adminOverlay" class="overlay">
+  <div class="overlay-content card">
+    <h3>Nouvelle obligation</h3>
+    <form id="adminForm">
+      <div class="form-group">
+        <label>Intitulé</label>
+        <input type="text" id="adminTitle" placeholder="Ex: Déclaration URSSAF..." required>
+      </div>
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label>Échéance</label>
+          <input type="date" id="adminDate" required>
+        </div>
+        <div class="form-group">
+          <label>Catégorie</label>
+          <select id="adminCat">
+            <option value="Administratif">Administratif</option>
+            <option value="Fiscal">Fiscal</option>
+            <option value="Client">Client</option>
+            <option value="Autre">Autre</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn-filter" onclick="closeOverlay()">Annuler</button>
+        <button type="submit" class="btn-filter active">Enregistrer</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./scripts/admin.js"></script>
+
+</body>
+</html>

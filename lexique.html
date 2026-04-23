@@ -22,7 +22,11 @@
   <main class="page-content">
     <div class="content-header">
       <h2>Se souvenir de tout ce que l'on à chercher</h2>
-      <input type="text" id="searchInput" placeholder="Rechercher...">
+  <div class="search-wrapper" style="display: flex; gap: 5px; flex-grow: 1; max-width: 300px;">
+  <input type="text" id="searchInput" placeholder="Rechercher...">
+  <button id="clearSearch" class="btn-filter">✕</button>
+    
+</div>
     </div>
   <div class="filter-group">
     <button class="btn-filter active" data-cat="all">Tout</button>

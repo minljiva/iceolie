@@ -39,7 +39,7 @@ body { background: var(--bg-outer); font-family: system-ui, -apple-system, sans-
 
 /* titre */
 h1 {font-family: var(--font-title); font-size: 33px; color: var(--texte-soft); box-shadow: 2px 2px 0px var(--ombre); font-weight: 500; text-align: center; margin-bottom: 0rem; margin-top: -20px; }
-h2 {font-family: var(--font-title); font-size: 1.2rem; font-weight: 500; color: var(--texte-muted); margin-top: -5px; border-bottom: 2px dashed var(--bordure);  padding-bottom: -7px; /* colle la bordure au texte */}
+h2 {font-family: var(--font-title); font-size: 1.2rem; font-weight: 500; color: var(--texte-muted); margin-top: -5px; border-bottom: 2px dashed var(--bordure);  padding-bottom: -15px; /* colle la bordure au texte */}
 p  { margin: 5px 2px; }
 
 /* liens */
@@ -105,7 +105,7 @@ a:hover { color: var(--terre); transform: translateY(-2px);}
 .db-card:hover::after { width: 25px; height: 25px; border-bottom-width: 3px; border-right-width: 3px;}
 
 /* Le titre H3 typé "Technique" */
-.db-card h3 { font-family: var(--font-title); font-size: 1.2rem; margin-top: -10px; color: var(--texte-soft); margin-bottom: 5px; padding-left: 10px; border-left: 4px solid var(--rose); /* Rappel de ta barre de côté "active" */ display: block;}
+.db-card h3 { font-family: var(--font-title); font-size: 1.2rem; Padding-bottom: -15px; margin-top: -10px; color: var(--texte-soft); margin-bottom: 5px; padding-left: 10px; border-left: 4px solid var(--rose); /* Rappel de ta barre de côté "active" */ display: block;}
 
 /* Pour le contenu, on reste sobre */
 .db-content { font-size: 13px; color: var(--texte-muted);margin-left: 10px;}

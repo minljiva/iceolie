@@ -23,6 +23,8 @@
   /* -- Ombre --*/
   --ombre:       0 2px 8px  rgba(30, 20, 15, 0.10);
   --ombre-forte: 0 4px 16px rgba(30, 20, 15, 0.18);
+  --C-ombre:       rgba(30, 20, 15, 0.10);
+  --C-ombre-forte: rgba(30, 20, 15, 0.18);
   /* ── Typographie ── */
   --font-title:     'catchy-mager', sans-serif;
   --font-body:      system-ui;
@@ -32,9 +34,9 @@
   @font-face { font-family: 'catchy-mager'; src: url('./font/catchy-mager.otf') format('opentype');}
 
 /* body */
-body { background: var(--bg-page); font-family: system-ui, -apple-system, sans-serif; color: var(--texte);  padding: 2rem 0; max-width: 780px;margin: 0 auto; line-height: 1.6;}
+body { background: var(--bg-outer); font-family: system-ui, -apple-system, sans-serif; color: var(--texte);  padding: 2rem 0; max-width: 780px;margin: 0 auto; line-height: 1.6;}
 .page-content {
-  background: var(--bg-card); /* Ou une couleur très légèrement différente de var(--bg-page) */
+  background: var(--bg-page); /* Ou une couleur très légèrement différente de var(--bg-page) */
   border: 1px solid var(--bordure);
   border-top: 4px solid var(--petrole); /* Un rappel de ta couleur forte en haut */
   border-radius: 20px 20px 0 0; /* Arrondi uniquement en haut */
@@ -43,7 +45,7 @@ body { background: var(--bg-page); font-family: system-ui, -apple-system, sans-s
   padding-top: 5px;
   margin-top: -15px;
   min-height: 80vh; /* Pour qu'il descende bien jusqu'en bas de l'écran */
-  box-shadow: 0 -10px 25px rgba(0,0,0,0.03); /* Petite ombre vers le haut pour l'effet de feuille posée */
+  box-shadow: 0 -10px 25px var(--ombre); /* Petite ombre vers le haut pour l'effet de feuille posée */
   
   max-width: 900px; /* Un peu plus large que ton header pour donner du souffle */
   margin-left: auto;
@@ -58,8 +60,8 @@ body { background: var(--bg-page); font-family: system-ui, -apple-system, sans-s
 }
 
 /* titre */
-h1 {font-family: var(--font-title); font-size: 33px; font-weight: 500; text-align: center; margin-bottom: 0rem; margin-top: -20px; }
-h2 {font-family: var(--font-title); font-size: 1.2rem; font-weight: 500; margin-bottom: 0.5rem; color: var(--petrole); margin-top: -10px; border-bottom: 2px dashed var(--bordure);}
+h1 {font-family: var(--font-title); font-size: 33px; var(--texte-muted); font-weight: 500; text-align: center; margin-bottom: 0rem; margin-top: -20px; }
+h2 {font-family: var(--font-title); font-size: 1.2rem; font-weight: 500; margin-bottom: 0.5rem; color: var(--texte-soft); margin-top: -10px; border-bottom: 2px dashed var(--bordure-forte);}
 p  { margin: 5px 2px; }
 
 /* liens */
@@ -103,8 +105,8 @@ a:hover { color: var(--terre); transform: translateY(-2px);}
 .texte-muted { background: var(--texte-muted); }
 .bordure { background: var(--bordure); }
 .bordure-forte { background: var(--bordure-forte); }
-.ombre { background: var(--ombre); }
-.ombre-forte { background: var(--ombre-forte); }
+.ombre { background: var(--C-ombre); }
+.ombre-forte { background: var(--C-ombre-forte); }
 
 /* PAGE INDEX */
 .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; padding: 10px; background-color : var(--bg-page);}

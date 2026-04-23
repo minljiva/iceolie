@@ -1,11 +1,12 @@
-// 🔑 CONFIGURATION SUPABASE (Remplace par tes vraies infos)
-const SUPABASE_URL = "https://ljkaqpgpfczqvpobwzoo.supabase.co/rest/v1/";
+// 🔑 CONFIGURATION (URL corrigée : on retire /rest/v1/)
+const SUPABASE_URL = "https://ljkaqpgpfczqvpobwzoo.supabase.co"; 
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxqa2FxcGdwZmN6cXZwb2J3em9vIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY5Mjg4ODYsImV4cCI6MjA5MjUwNDg4Nn0.N813WeFmHTGJvgAcSgRMTSYmog21fJn979OU__urZjY";
-const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-// 🛠️ 1. FONCTION POUR RÉCUPÉRER LES DONNÉES
+// On utilise supabase.createClient (attention, pas de minuscule au début pour la librairie)
+const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
 async function fetchProjects() {
-  const { data, error } = await supabase
+  const { data, error } = await _supabase // Utilisation du client créé
     .from('projects')
     .select('*')
     .order('created_at', { ascending: false });
@@ -17,28 +18,28 @@ async function fetchProjects() {
   }
 }
 
-// 🛠️ 2. FONCTION POUR AFFICHER LES DONNÉES
 function renderProjects(data) {
   const container = document.getElementById('projectsContainer');
   if (!container) return;
 
-  // On vide le container et on change sa classe pour la grille projet
   container.className = "projects-grid"; 
   
+  if (data.length === 0) {
+    container.innerHTML = "<p>Aucun projet pour le moment.</p>";
+    return;
+  }
+
   container.innerHTML = data.map(proj => `
     <div class="project-card">
       <div class="project-image" style="background-image: url('${proj.img || 'https://via.placeholder.com/300x200'}')"></div>
       <div class="project-info">
         <h3>${proj.title}</h3>
-        <a href="${proj.link}" target="_blank" class="project-link">
-          Ouvrir le lien →
-        </a>
+        <a href="${proj.link}" target="_blank" class="project-link">Ouvrir le lien →</a>
       </div>
     </div>
   `).join('');
 }
 
-// ⚡ 3. FORMULAIRE D'ENVOI
 const projectForm = document.getElementById('projectForm');
 if (projectForm) {
   projectForm.addEventListener('submit', async (e) => {
@@ -50,17 +51,15 @@ if (projectForm) {
       img: document.getElementById('projImg').value
     };
 
-    // Envoi vers Supabase
-    const { error } = await supabase.from('projects').insert([newProject]);
+    const { error } = await _supabase.from('projects').insert([newProject]);
 
     if (error) {
       alert("Erreur lors de l'ajout : " + error.message);
     } else {
       projectForm.reset();
-      fetchProjects(); // On rafraîchit la liste immédiatement
+      fetchProjects();
     }
   });
 }
 
-// 🚀 4. LANCEMENT
 fetchProjects();

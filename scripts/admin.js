@@ -13,40 +13,53 @@ async function fetchTasks() {
     else renderTasks(data);
 }
 
-// ── 2. AFFICHER ──
+// ── 2. AFFICHER (Nettoyé) ──
 function renderTasks(tasks) {
     const container = document.getElementById('adminTasks');
     if (!container) return;
 
     if (!tasks || tasks.length === 0) {
-        container.innerHTML = "<p class='empty-msg'>Aucune tâche en cours. C'est le moment de se reposer !</p>";
+        container.innerHTML = "<p class='empty-msg'>Aucune tâche en cours.</p>";
         return;
     }
 
     container.innerHTML = tasks.map(task => `
-    <div class="card admin-task ${task.adminDone ? 'done' : ''}" style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
-      <input type="checkbox" ${task.adminDone ? 'checked' : ''} 
-             onclick="toggleTask('${task.id}', ${task.adminDone})" 
-             style="width: 20px; height: 20px; cursor: pointer; accent-color: var(--petrole);">
-      <div style="flex-grow: 1;">
-        <div style="font-weight: bold; font-size: 14px; text-decoration: ${task.adminDone ? 'line-through' : 'none'}">${task.adminTitle}</div>
-        <div style="font-size: 11px; color: var(--texte-muted);">📅 ${task.adminDate} • ${task.adminCat}</div>
+    <div class="card admin-task ${task.adminDone ? 'done' : ''}" 
+         style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px; opacity: ${task.adminDone ? '0.6' : '1'}">
+      
+      <input type="checkbox" 
+             ${task.adminDone ? 'checked' : ''} 
+             onclick="toggleTaskStatus('${task.id}', ${task.adminDone})" 
+             style="width: 22px; height: 22px; cursor: pointer; accent-color: var(--petrole); flex-shrink: 0;">
+      
+      <div style="flex-grow: 1; cursor: pointer;" onclick="toggleTaskStatus('${task.id}', ${task.adminDone})">
+        <div style="font-weight: bold; font-size: 14px; text-decoration: ${task.adminDone ? 'line-through' : 'none'}">
+            ${task.adminTitle}
+        </div>
+        <div style="font-size: 11px; color: var(--texte-muted);">
+            📅 ${task.adminDate || 'Pas de date'} • ${task.adminCat || 'Général'}
+        </div>
       </div>
     </div>
   `).join('');
 }
 
-// ── 3. CHANGER STATUT ──
-async function toggleTask(id, currentStatus) {
+// ── 3. CHANGER STATUT (Unifié) ──
+async function toggleTaskStatus(id, currentStatus) {
+    console.log("Clic sur la tâche ID:", id, "Statut actuel:", currentStatus);
+    
     const { error } = await _supabase
         .from('iceolie_admin')
-        .update({ adminDone: !currentStatus })
+        .update({ adminDone: !currentStatus }) // On inverse le booléen
         .eq('id', id);
 
-    if (error) console.error(error);
-    else fetchTasks();
+    if (error) {
+        console.error("Erreur lors de la mise à jour :", error.message);
+    } else {
+        console.log("Mise à jour réussie !");
+        fetchTasks(); // On recharge la liste pour voir le changement
+    }
 }
-
 // ── 4. AJOUTER ──
 // On attend que le DOM soit prêt pour lier le formulaire
 document.addEventListener('DOMContentLoaded', () => {

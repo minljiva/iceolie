@@ -38,7 +38,7 @@ body { background: var(--bg-outer); font-family: system-ui, -apple-system, sans-
 .page-content {
   background: var(--bg-page); /* Ou une couleur très légèrement différente de var(--bg-page) */
   border: 1px solid var(--bordure);
-  border-top: 4px solid var(--petrole); /* Un rappel de ta couleur forte en haut */
+  border-top: 4px solid var(--bordure-forte); /* Un rappel de ta couleur forte en haut */
   border-radius: 20px 20px 0 0; /* Arrondi uniquement en haut */
   
   padding: 20px;
@@ -53,15 +53,11 @@ body { background: var(--bg-outer); font-family: system-ui, -apple-system, sans-
 }
 
 /* On ajuste le H2 pour qu'il s'intègre parfaitement dedans */
-.page-content h2 {
-  border-bottom: 2px dashed var(--givre); /* Utilise ton bleu givre pour le tiret */
-  display: table; /* Une autre façon de réduire la largeur au texte seul */
-  padding-bottom: 0;
-}
+.page-content h2 { border-bottom: 2px dashed var(--bordure-forte); /* Utilise ton bleu givre pour le tiret */ padding-bottom: 0;}
 
 /* titre */
 h1 {font-family: var(--font-title); font-size: 33px; color: var(--texte-muted); font-weight: 500; text-align: center; margin-bottom: 0rem; margin-top: -20px; }
-h2 {font-family: var(--font-title); font-size: 1.2rem; font-weight: 500; margin-bottom: 0.5rem; color: var(--texte-soft); margin-top: -10px; border-bottom: 2px dashed var(--bordure-forte);}
+h2 {font-family: var(--font-title); font-size: 1.2rem; font-weight: 500; color: var(--texte-soft); margin-top: -5px; border-bottom: 2px dashed var(--bordure-forte);}
 p  { margin: 5px 2px; }
 
 /* liens */
@@ -112,7 +108,7 @@ a:hover { color: var(--terre); transform: translateY(-2px);}
 .ombre-forte { background: var(--C-ombre-forte); }
 
 /* PAGE INDEX */
-.dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; padding: 10px; background: var(--bg-page);}
+.dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; padding: 10px;}
 .db-card { background: var(--bg-card); padding: 24px; border-radius: 7px; position: relative; /* On garde un arrondi léger mais on mise sur la bordure */ border: 1px solid var(--bordure); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); box-shadow: 4px 4px 0px var(--ombre-forte); }
 
 /* On ajoute un petit "voyant" lumineux pour le statut */
@@ -124,13 +120,13 @@ a:hover { color: var(--terre); transform: translateY(-2px);}
 .db-card::after { bottom: 0; right: 0; }
 
 /* Animation au survol de la carte */
-.db-card:hover {border-radius: 0px; transform: translate(-2px, -2px); /* Petit décalage pour l'effet 3D */ box-shadow: 8px 8px 0px var(--givre); /* L'ombre devient colorée */ border-color: var(--petrole);}
+.db-card:hover {border-radius: 0px; transform: translate(-2px, -2px); /* Petit décalage pour l'effet 3D */ box-shadow: 5px 5px 0px var(--givre); /* L'ombre devient colorée */ border-color: var(--bordure);}
 
 .db-card:hover::before { width: 25px; height: 25px; border-top-width: 3px; border-left-width: 3px;}
 .db-card:hover::after { width: 25px; height: 25px; border-bottom-width: 3px; border-right-width: 3px;}
 
 /* Le titre H3 typé "Technique" */
-.db-card h3 { font-family: var(--font-title); font-size: 1.2rem; color: var(--petrole); margin-bottom: 15px; padding-left: 10px; border-left: 4px solid var(--rose); /* Rappel de ta barre de côté "active" */ display: block;}
+.db-card h3 { font-family: var(--font-title); font-size: 1.2rem; color: var(--texte-muted); margin-bottom: 15px; padding-left: 10px; border-left: 4px solid var(--rose); /* Rappel de ta barre de côté "active" */ display: block;}
 
 /* Pour le contenu, on reste sobre */
 .db-content { font-size: 14px; color: var(--texte-muted);}

@@ -53,4 +53,16 @@ a:hover { color: var(--terre); transform: translateY(-2px); }
 .btn-filter:hover { border-color: var(--petrole); color: var(--petrole); }
 .btn-filter.active { background: var(--petrole); color: white; border-color: var(--petrole); box-shadow: var(--ombre); }
 
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; } 
+.project-card { background: var(--bg-card); border: 1px solid var(--bordure); border-radius: 12px; overflow: hidden; transition: all 0.3s ease; display: flex; flex-direction: column; } 
+.project-card:hover { transform: translateY(-5px); box-shadow: var(--ombre-forte); border-color: var(--petrole); } 
+.project-image { width: 100%; height: 200px; background-size: cover; background-position: center; border-bottom: 1px solid var(--bordure); } 
+.project-info { padding: 15px; } .project-info h3 { margin: 0 0 10px 0; font-size: 1.1em; color: var(--texte); } 
+.project-link { display: inline-block; color: var(--petrole); text-decoration: none; font-weight: 600; font-size: 0.9em; margin-top: 10px; } 
+.project-link:hover { text-decoration: underline; } .add-project-box { background: var(--bg-card); padding: 20px; border-radius: 8px; border: 1px solid var(--bordure); margin-bottom: 30px; } 
+.add-project-box form { display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 10px; } 
+.add-project-box input { padding: 10px; border: 1px solid var(--bordure); border-radius: 5px; background: white; font-family: var(--font-body); font-size: 13px; } 
+.add-project-box input:focus { outline: none; border-color: var(--petrole); } @media (max-width: 768px) } 
+.add-project-box form { grid-template-columns: 1fr; }
+
 .lilas { background: var(--lilas); } .rose { background: var(--rose); } .terre { background: var(--terre); } .givre { background: var(--givre); } .tempete { background: var(--tempete); } .petrole { background: var(--petrole); } .lilas-pale { background: var(--lilas-pale); } .givre-pale { background: var(--givre-pale); } .terre-pale { background: var(--terre-pale); } .bg-outer { background: var(--bg-outer); } .bg-page { background: var(--bg-page); } .bg-card { background: var(--bg-card); } .texte-soft { background: var(--texte-soft); } .texte-muted { background: var(--texte-muted); } .bordure { background: var(--bordure); } .bordure-forte { background: var(--bordure-forte); }

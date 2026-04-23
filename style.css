@@ -92,11 +92,14 @@ a:hover { color: var(--terre); transform: translateY(-2px);}
 .cards-container-accent { display: grid; grid-template-columns: repeat(3, 1fr);   /* Crée 3 colonnes de taille égale (1fr = 1 fraction) */ justify-items: center; gap: 25px; width: 100%;}
 .cards-container-soft { display: flex; flex-direction: row; justify-content: center; flex-wrap: wrap; gap: 25px; width: 100%;}
 .lilas { background: var(--lilas); }
+.lilas-pale { background: var(--lilas-pale); }
 .rose { background: var(--rose); }
 .tempete { background: var(--tempete); }
 .petrole { background: var(--petrole); }
 .givre { background: var(--givre); }
+.givre-pale { background: var(--givre-pale); }
 .terre { background: var(--terre); }
+.terre-pale { background: var(--terre-pale); }
 .bg-outer { background: var(--bg-outer); }
 .bg-page { background: var(--bg-page); }
 .bg-card { background: var(--bg-card); }

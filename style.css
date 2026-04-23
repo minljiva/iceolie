@@ -71,7 +71,7 @@
 /*-- PAGE COULEUR -- */
     .palette {display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 1000px; margin: 0 auto; border-bottom: 2px solid var(--bordure);}
     .palette-group { display: flex; flex-direction: column; align-items: center; width: 100%; margin-bottom: 5px; }
-    .color-card { background: var(--bg-card); border-radius: 12px; padding: 10px; margin-bottom: 5px; border: 1px solid var(--bordure); transition: transform 0.15s ease, box-shadow: var(--bordure); display: flex; flex-direction: column; align-items: center; text-align: center; width: 130px; }
+    .color-card { background: var(--bg-card); border-radius: 7px; padding: 10px; margin-bottom: 5px; border: 1px solid var(--bordure); transition: transform 0.15s ease, ox-shadow: var(--ombre-forte);; display: flex; flex-direction: column; align-items: center; text-align: center; width: 130px; }
     .color-box {  width: 100%; height: 80px; color: var(--texte-soft); border-radius: 10px;  margin-bottom: 2px; box-shadow: var(--bordure);}
     .cards-container-accent { display: grid; grid-template-columns: repeat(3, 1fr);   /* Crée 3 colonnes de taille égale (1fr = 1 fraction) */ justify-items: center; gap: 25px; width: 100%;}
     .cards-container-soft { display: grid; grid-template-columns: repeat(2, 1fr);   /* Crée 3 colonnes de taille égale (1fr = 1 fraction) */ justify-items: center;  gap: 25px; width: 100%;}

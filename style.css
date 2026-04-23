@@ -76,7 +76,7 @@ a:hover { color: var(--terre); transform: translateY(-2px);}
 .db-card::after { bottom: 0; right: 0; }
 
 /* Animation au survol de la carte */
-.db-card:hover {transform: translate(-2px, -2px); /* Petit décalage pour l'effet 3D */ box-shadow: 8px 8px 0px var(--givre); /* L'ombre devient colorée */ border-color: var(--petrole);}
+.db-card:hover {border-radius: 0px; transform: translate(-2px, -2px); /* Petit décalage pour l'effet 3D */ box-shadow: 8px 8px 0px var(--givre); /* L'ombre devient colorée */ border-color: var(--petrole);}
 
 .db-card:hover::before { width: 25px; height: 25px; border-top-width: 3px; border-left-width: 3px;}
 .db-card:hover::after { width: 25px; height: 25px; border-bottom-width: 3px; border-right-width: 3px;}

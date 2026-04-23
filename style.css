@@ -60,7 +60,7 @@ body { background: var(--bg-outer); font-family: system-ui, -apple-system, sans-
 }
 
 /* titre */
-h1 {font-family: var(--font-title); font-size: 33px; var(--texte-muted); font-weight: 500; text-align: center; margin-bottom: 0rem; margin-top: -20px; }
+h1 {font-family: var(--font-title); font-size: 33px; color: var(--texte-muted); font-weight: 500; text-align: center; margin-bottom: 0rem; margin-top: -20px; }
 h2 {font-family: var(--font-title); font-size: 1.2rem; font-weight: 500; margin-bottom: 0.5rem; color: var(--texte-soft); margin-top: -10px; border-bottom: 2px dashed var(--bordure-forte);}
 p  { margin: 5px 2px; }
 
@@ -72,21 +72,21 @@ a:hover { color: var(--terre); transform: translateY(-2px);}
 .top-bar { display: flex; justify-content:space-between; /* Le logo à gauche, la nav à droite */ align-items: center;      /* Aligne les deux parfaitement au milieu (hauteur) */ max-width: 780px;         /* Aligné sur la largeur de ton site */ margin: 0 auto;           /* Centré dans la page */ padding: 10px 0;}
 .logo img { display: block; max-width: 150px; height: auto;}
 .main-nav { display: flex; gap: 5px; border-bottom: none;  margin-bottom: 0; font-size: 12px;}
-.nav-link { position: relative; padding: 3px 5px; color: var(--tempete); text-decoration: none;}
+.nav-link { position: relative; padding: 3px 5px; color: var(--petrole); text-decoration: none;}
 /* On crée les coins avec avant/après */
-.nav-link::before, .nav-link::after { content: ""; position: absolute; width: 0; height: 0; border: 0 solid var(--petrole); transition: all 0.3s ease;}
+.nav-link::before, .nav-link::after { content: ""; position: absolute; width: 0; height: 0; border: 0 solid var(--bordure-forte); transition: all 0.3s ease;}
 /* Coin haut-gauche */
 .nav-link::before { top: 0; left: 0;}
 /* Coin bas-droite */
 .nav-link::after { bottom: 0; right: 0;}
 .nav-link:hover::before { width: 9px; height: 9px; border-top-width: 2px; border-left-width: 2px;}
 .nav-link:hover::after { width: 9px; height: 9px; border-bottom-width: 2px; border-right-width: 2px;}
-.nav-link.active { border-radius: 7px; color: var(--bg-page); background-color: var(--petrole); /* Couleur plus forte pour la page actuelle */}
+.nav-link.active { border-radius: 7px; color: var(--bg-outer); background-color: var(--texte-soft); /* Couleur plus forte pour la page actuelle */}
 
 /*-- PAGE COULEUR -- */
 .palette {display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 1000px; margin: 0 auto; border-bottom: 2px solid var(--bordure);}
 .palette-group { display: flex; flex-direction: column; align-items: center; width: 100%; margin-bottom: 5px; }
-.palette-title { font-family: var(--font-title);  font-size: 18px; margin-top: 5px; padding-bottom: 6px; border-bottom: 2px solid var(--bordure); text-align: left; margin-right: 20px; margin-bottom: 5px; width: 100%;}
+.palette-title { font-family: var(--font-title);  font-size: 18px; margin-top: 5px; padding-bottom: 6px; border-bottom: 2px solid var(--bordure-forte); text-align: left; margin-right: 20px; margin-bottom: 5px; width: 100%;}
 .color-card { background: var(--bg-card); border-radius: 12px; padding: 10px; margin-bottom: 5px; border: 1px solid var(--bordure); transition: transform 0.15s ease, box-shadow 0.15s ease; display: flex; flex-direction: column; align-items: center; text-align: center; width: 130px; }
 .color-box {  width: 100%; height: 80px;  border-radius: 10px;  margin-bottom: 2px; box-shadow: inset 0 0 0 1px var(--bordure);}
 .cards-container-accent { display: grid; grid-template-columns: repeat(3, 1fr);   /* Crée 3 colonnes de taille égale (1fr = 1 fraction) */ justify-items: center; gap: 25px; width: 100%;}
@@ -112,11 +112,11 @@ a:hover { color: var(--terre); transform: translateY(-2px);}
 .ombre-forte { background: var(--C-ombre-forte); }
 
 /* PAGE INDEX */
-.dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; padding: 10px; background-color : var(--bg-page);}
-.db-card { background: var(--bg-card); padding: 24px; border-radius: 7px; position: relative; /* On garde un arrondi léger mais on mise sur la bordure */ border: 1px solid var(--bordure); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); box-shadow: 4px 4px 0px var(--bordure); }
+.dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; padding: 10px; background: var(--bg-page);}
+.db-card { background: var(--bg-card); padding: 24px; border-radius: 7px; position: relative; /* On garde un arrondi léger mais on mise sur la bordure */ border: 1px solid var(--bordure); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); box-shadow: 4px 4px 0px var(--ombre-forte); }
 
 /* On ajoute un petit "voyant" lumineux pour le statut */
-.db-card::before, .db-card::after { content: ""; position: absolute; width: 0; height: 0; border: 0 solid var(--petrole); /* Couleur pétrole comme ta nav */ transition: all 0.4s ease;}
+.db-card::before, .db-card::after { content: ""; position: absolute; width: 0; height: 0; border: 0 solid var(--bordure); /* Couleur pétrole comme ta nav */ transition: all 0.4s ease;}
 
 /* Coin haut-gauche */
 .db-card::before { top: 0; left: 0; }
@@ -133,7 +133,7 @@ a:hover { color: var(--terre); transform: translateY(-2px);}
 .db-card h3 { font-family: var(--font-title); font-size: 1.2rem; color: var(--petrole); margin-bottom: 15px; padding-left: 10px; border-left: 4px solid var(--rose); /* Rappel de ta barre de côté "active" */ display: block;}
 
 /* Pour le contenu, on reste sobre */
-.db-content { font-size: 14px; color: var(--tempete);}
+.db-content { font-size: 14px; color: var(--texte-mutedx);}
 
 
 

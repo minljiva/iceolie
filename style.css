@@ -1,18 +1,32 @@
-:root { 
-/* couleur d'accent */
-  --lilas:    #CDA8CC;
-  --rose:     #A45166;
-  --tempete:  #4C6092;
-  --petrole:  #20576C;
-  --givre:    #79B7BF;
-  --terre:    #511A00;
-/* couleur neutre */
-  --bg-page:      #f8f9fa;
-  --bg-card:      #ffffff;
-  --texte:    #1a1a1a;
-  --bordure:      #e0e0e0;
-  --font-title: 'catchy-mager', sans-serif;
-  --font-body: system-ui;}
+:root {
+  /* ── Accents ── */
+  --lilas:          #CDA8CC;
+  --lilas-pale:     #EDE4ED;
+  --rose:           #A45166;
+  --tempete:        #4C6092;
+  --petrole:        #20576C;
+  --givre:          #79B7BF;
+  --givre-pale:     #D6E9EC;
+  --terre:          #511A00;
+  --terre-pale:     #F0DDD5;
+  /* ── Fonds — hiérarchie page ── */
+  --bg-outer:       #DDDBD4;
+  --bg-page:        #F0EEE8;
+  --bg-card:        #FAFAF7;
+  /* ── Texte ── */
+  --texte:          #1E1E1E;
+  --texte-soft:     #4A4845;
+  --texte-muted:    #8C8A86;
+  /* ── Bordures ── */
+  --bordure:        #C8C5BE;
+  --bordure-forte:  #7A7874;
+  /* -- Ombre --*/
+  --ombre:       0 2px 8px  rgba(30, 20, 15, 0.10);
+  --ombre-forte: 0 4px 16px rgba(30, 20, 15, 0.18);
+  /* ── Typographie ── */
+  --font-title:     'catchy-mager', sans-serif;
+  --font-body:      system-ui;
+}
 
 /* polices */
   @font-face { font-family: 'catchy-mager'; src: url('./font/catchy-mager.otf') format('opentype');}

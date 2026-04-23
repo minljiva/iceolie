@@ -16,7 +16,7 @@ async function fetchProjects() {
     if(statusMsg) statusMsg.innerText = "Chargement des projets...";
     
     const { data, error } = await _supabase
-        .from('projects')
+        .from('iceolie_projets')
         .select('*')
         .order('created_at', { ascending: false });
 
@@ -66,7 +66,7 @@ if (projectForm) {
             cat: 'Inspiration'
         };
 
-        const { error } = await _supabase.from('projects').insert([newProject]);
+        const { error } = await _supabase.from('iceolie_projets').insert([newProject]);
 
         if (error) {
             alert("Erreur d'insertion : " + error.message);

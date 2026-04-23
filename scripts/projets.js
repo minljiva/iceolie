@@ -22,11 +22,18 @@ function renderProjects(data) {
   const container = document.getElementById('projectsContainer');
   if (!container) return;
 
+  // On vide le container et on change sa classe pour la grille projet
+  container.className = "projects-grid"; 
+  
   container.innerHTML = data.map(proj => `
-    <div class="card">
-      <div style="width:100%; height:150px; background-image: url('${proj.img || 'https://via.placeholder.com/300x200'}'); background-size: cover; background-position: center; border-radius: 5px; margin-bottom: 10px;"></div>
-      <h3>${proj.title}</h3>
-      <a href="${proj.link}" target="_blank" class="nav-link" style="padding: 0; color: var(--petrole); font-weight: bold; font-size: 12px;">Voir la source →</a>
+    <div class="project-card">
+      <div class="project-image" style="background-image: url('${proj.img || 'https://via.placeholder.com/300x200'}')"></div>
+      <div class="project-info">
+        <h3>${proj.title}</h3>
+        <a href="${proj.link}" target="_blank" class="project-link">
+          Ouvrir le lien →
+        </a>
+      </div>
     </div>
   `).join('');
 }

@@ -1,84 +1,78 @@
-const SUPABASE_URL = "https://ljkaqpgpfczqvpobwzoo.supabase.co/iceolie_admin";
-const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxqa2FxcGdwZmN6cXZwb2J3em9vIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY5Mjg4ODYsImV4cCI6MjA5MjUwNDg4Nn0.N813WeFmHTGJvgAcSgRMTSYmog21fJn979OU__urZjY"; // Utilise la même clé que dans projets.js
+const SUPABASE_URL = "https://ljkaqpgpfczqvpobwzoo.supabase.co";
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxqa2FxcGdwZmN6cXZwb2J3em9vIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY5Mjg4ODYsImV4cCI6MjA5MjUwNDg4Nn0.N813WeFmHTGJvgAcSgRMTSYmog21fJn979OU__urZjY";
 const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-// ── 1. CHARGER LES TÂCHES ──
+// ── 1. CHARGER ──
 async function fetchTasks() {
   const { data, error } = await _supabase
     .from('iceolie_admin')
     .select('*')
-    .order('created_at', { ascending: true });
+    .order('adminDate', { ascending: true });
 
-  if (error) console.error(error);
+  if (error) console.error("Erreur:", error);
   else renderTasks(data);
 }
 
-// ── 2. AFFICHER LES TÂCHES ──
+// ── 2. AFFICHER ──
 function renderTasks(tasks) {
   const container = document.getElementById('adminTasks');
   if (!container) return;
 
+  if (tasks.length === 0) {
+    container.innerHTML = "<p>Aucune tâche en cours. C'est le moment de se reposer !</p>";
+    return;
+  }
+
   container.innerHTML = tasks.map(task => `
-    <div class="admin-task ${task.is_done ? 'done' : ''}">
-      <input type="checkbox" ${task.is_done ? 'checked' : ''} 
-             onclick="toggleTask('${task.id}', ${task.is_done})">
-      <div style="flex-grow:1">
-        <div>${task.text}</div>
-        <small style="color: var(--texte-muted); font-size: 11px;">${task.due_date}</small>
+    <div class="card admin-task ${task.adminDone ? 'done' : ''}" style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+      <input type="checkbox" ${task.adminDone ? 'checked' : ''} 
+             onclick="toggleTask('${task.id}', ${task.adminDone})" 
+             style="width: 20px; height: 20px; cursor: pointer; accent-color: var(--petrole);">
+      <div style="flex-grow: 1;">
+        <div style="font-weight: bold; font-size: 14px;">${task.adminTitle}</div>
+        <div style="font-size: 11px; color: var(--texte-muted);">📅 ${task.adminDate} • ${task.adminCat}</div>
       </div>
     </div>
   `).join('');
 }
 
-// ── 3. COCHER / DÉCOCHER (Update) ──
+// ── 3. CHANGER STATUT ──
 async function toggleTask(id, currentStatus) {
   const { error } = await _supabase
     .from('iceolie_admin')
-    .update({ is_done: !currentStatus })
+    .update({ adminDone: !currentStatus })
     .eq('id', id);
 
   if (!error) fetchTasks();
 }
 
-// ── 4. AJOUTER UNE TÂCHE ──
-// Tu peux lier ça à un petit formulaire plus tard
-async function addTask(text, date) {
-  const { error } = await _supabase
-    .from('iceolie_admin')
-    .insert([{ text, due_date: date, is_done: false }]);
-  
-  if (!error) fetchTasks();
+// ── 4. AJOUTER ──
+const adminForm = document.getElementById('adminForm');
+if (adminForm) {
+  adminForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const newTask = {
+      adminTitle: document.getElementById('adminTitle').value,
+      adminDate:  document.getElementById('adminDate').value,
+      adminCat:   document.getElementById('adminCat').value,
+      adminDone:  false
+    };
+
+    const { error } = await _supabase.from('iceolie_admin').insert([newTask]);
+
+    if (error) alert("Erreur d'envoi : " + error.message);
+    else {
+      closeOverlay();
+      adminForm.reset();
+      fetchTasks();
+    }
+  });
 }
 
+// ── 5. OVERLAY ──
+function openOverlay() { document.getElementById('adminOverlay').classList.add('active'); }
+function closeOverlay() { document.getElementById('adminOverlay').classList.remove('active'); }
+
+// Lancement
 document.addEventListener('DOMContentLoaded', fetchTasks);
-
-const adminTasks = [
-  { id: 1, text: "Déclaration CA trimestriel", done: false, date: "Avant le 31/03" },
-  { id: 2, text: "Renouveler assurance pro", done: true, date: "Fait" },
-  { id: 3, text: "Mise à jour du livre des recettes", done: false, date: "Hebdomadaire" }
-];
-
-function renderAdmin() {
-  const container = document.getElementById('adminTasks');
-  if (!container) return;
-
-  container.innerHTML = adminTasks.map(task => `
-    <div class="admin-task ${task.done ? 'done' : ''}">
-      <input type="checkbox" ${task.done ? 'checked' : ''} onchange="toggleTask(${task.id})">
-      <div style="flex-grow:1">
-        <div>${task.text}</div>
-        <small style="color: var(--texte-muted); font-size: 11px;">${task.date}</small>
-      </div>
-    </div>
-  `).join('');
-}
-
-function toggleTask(id) {
-  const task = adminTasks.find(t => t.id === id);
-  if (task) {
-    task.done = !task.done;
-    renderAdmin();
-  }
-}
-
-document.addEventListener('DOMContentLoaded', renderAdmin);

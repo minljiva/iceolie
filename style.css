@@ -3,7 +3,7 @@
 @font-face { font-family: 'catchy-mager'; src: url('./font/catchy-mager.otf') format('opentype'); }
 body { background: var(--bg-outer); font-family: var(--font-body); color: var(--texte); padding: 2rem 0; max-width: 100%; margin: 0 auto; line-height: 1.6; }
 .page-content { background: var(--bg-page); border: 1px solid var(--bordure); border-top: 2px solid var(--bordure-forte); border-radius: 20px 20px 0 0; padding: 20px; padding-top: 5px; margin-top: -15px; min-height: 80vh; box-shadow: var(--ombre); max-width: 780px; margin-left: auto; margin-right: auto; }
-h1 { font-family: var(--font-title); font-size: 33px; color: var(--texte-soft); text-shadow: var(--ombre); font-weight: 500; text-align: center; margin-bottom: 0rem; margin-top: -20px; }
+h1 { font-family: var(--font-title); font-size: 33px; color: var(--texte-soft); text-shadow: var(--ombre); font-weight: 500; text-align: center; margin-bottom: 2px; margin-top: -20px; }
 h2 { font-family: var(--font-title); font-size: 22px; font-weight: 500; color: var(--texte-muted); margin-top: 0px; border-bottom: 2px dashed var(--bordure); padding-bottom: 0px; line-height: 1; margin-bottom: 20px; }
 h3 { font-family: var(--font-title); font-size: 18px; line-height: 1; margin-top: 5px; color: var(--texte-soft); margin-bottom: 10px; padding-left: 10px; border-left: 4px solid var(--rose); display: block; }
 h4 { font-family: var(--font-title); font-size: 18px; color: var(--petrole); line-height: 1; border-bottom: 2px solid var(--bordure-forte); text-align: left; margin-bottom: 15px; width: 100%; margin-top: 20px; }
@@ -36,7 +36,7 @@ a:hover { color: var(--terre); transform: translateY(-2px); }
 .mini-list { list-style: none; padding: 0; font-size: 13px; color: var(--texte-muted); }
 .mini-list li { border-bottom: 1px dashed var(--bordure); padding: 2px 0; }
 
-.card-hero { grid-column: 1 / -1; background: linear-gradient(to right, var(--bg-card), var(--givre-pale)); border-left: 6px solid var(--givre); }
+.card-hero { grid-column: 1 / -1; background: var(--givre-pale)); border-left: 6px solid var(--givre); }
 .hero-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
 .hero-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
 .hero-stat { font-size: 12px; padding: 8px; background: rgba(255, 255, 255, 0.5); border-radius: 5px; border: 1px dashed var(--bordure); color: var(--texte-soft); }

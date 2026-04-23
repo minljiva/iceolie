@@ -1,6 +1,6 @@
 // 🔑 CONFIGURATION (URL corrigée : on retire /rest/v1/)
 const SUPABASE_URL = "https://ljkaqpgpfczqvpobwzoo.supabase.co"; 
-const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxqa2FxcGdwZmN6cXZwb2J3em9vIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY5Mjg4ODYsImV4cCI6MjA5MjUwNDg4Nn0.N813WeFmHTGJvgAcSgRMTSYmog21fJn979OU__urZjY";
+const SUPABASE_KEY = "sb_publishable_Ua00MHBo7_LG7EfDZiP7sA_wHa0fCCT"
 
 // On utilise supabase.createClient (attention, pas de minuscule au début pour la librairie)
 const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);

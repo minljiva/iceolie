@@ -133,7 +133,7 @@ a:hover { color: var(--terre); transform: translateY(-2px);}
 .db-card h3 { font-family: var(--font-title); font-size: 1.2rem; color: var(--petrole); margin-bottom: 15px; padding-left: 10px; border-left: 4px solid var(--rose); /* Rappel de ta barre de côté "active" */ display: block;}
 
 /* Pour le contenu, on reste sobre */
-.db-content { font-size: 14px; color: var(--texte-mutedx);}
+.db-content { font-size: 14px; color: var(--texte-muted);}
 
 
 

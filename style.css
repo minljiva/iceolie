@@ -26,7 +26,8 @@ body { background: var(--bg-page); font-family: system-ui, -apple-system, sans-s
   border-radius: 20px 20px 0 0; /* Arrondi uniquement en haut */
   
   padding: 20px;
-  margin-top: -20px;
+  padding-top: 5px;
+  margin-top: -15px;
   min-height: 80vh; /* Pour qu'il descende bien jusqu'en bas de l'écran */
   box-shadow: 0 -10px 25px rgba(0,0,0,0.03); /* Petite ombre vers le haut pour l'effet de feuille posée */
   
@@ -37,10 +38,7 @@ body { background: var(--bg-page); font-family: system-ui, -apple-system, sans-s
 
 /* On ajuste le H2 pour qu'il s'intègre parfaitement dedans */
 .page-content h2 {
-  margin-top: 10px;
   border-bottom: 2px dashed var(--givre); /* Utilise ton bleu givre pour le tiret */
-  padding-bottom: 5px;
-  margin-bottom: 5px;
   display: table; /* Une autre façon de réduire la largeur au texte seul */
   padding-bottom: 0;
 }

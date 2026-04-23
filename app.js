@@ -8,7 +8,7 @@ function renderCodex(data) {
   const container = document.getElementById('lexiqueContainer');
   container.innerHTML = data.map(item => `
     <div class="card">
-      <h3>${item.title}</h3>
+      <h3 style="border-left-color: ${item.cat === 'Résine' ? 'var(--lilas)' : item.cat === 'Technique' ? 'var(--givre)' : 'var(--tempete)'}">${item.title}</h3>
       <h5>${item.cat}</h5>
       <p style="font-size: 13px; font-weight: bold; color: var(--petrole);">${item.details}</p>
       <p style="font-size: 12px; color: var(--texte-muted); font-style: italic;">${item.note}</p>

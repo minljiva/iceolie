@@ -21,28 +21,27 @@
   </div>
 </header>
 
-  <h1>Projets</h1>
+<h1>Projets</h1>
 <main class="page-content">
-<div class="content-header">
+  <div class="content-header">
     <h2>Savoir où l'on va pour ne pas se perdre</h2>
   </div>
+    
+    <div id="status-msg" style="font-size: 12px; color: var(--petrole); margin-bottom: 10px;">Initialisation...</div>
 
-  <section class="add-project-box">
-    <form id="projectForm">
-      <input type="text" id="projTitle" placeholder="Nom de l'objet..." required>
-      <input type="text" id="projLink" placeholder="Lien (URL)..." required>
-      <input type="text" id="projInfos" placeholder="Explication">
-      <input type="text" id="projCat" placeholder="Catégorie">
-      <button type="submit" class="btn-filter active" style="margin:0">Partager</button>
-    </form>
-  </section>
+    <section class="add-project-box">
+      <form id="projectForm">
+        <input type="text" id="projTitle" placeholder="Nom de l'objet..." required>
+        <input type="text" id="projLink" placeholder="Lien (URL)..." required>
+        <input type="text" id="projImg" placeholder="Lien image (URL)...">
+        <button type="submit" class="btn-filter active">Partager</button>
+      </form>
+    </section>
 
-  <div id="projectsContainer"></div> 
+    <div id="projectsContainer"></div> 
+  </main>
 
-</main>
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="./scripts/projects.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.3/dist/umd/supabase.js"></script>
+  <script src="./scripts/projects.js"></script>
 </body>
 </html>

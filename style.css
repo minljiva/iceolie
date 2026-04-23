@@ -72,96 +72,64 @@ a:hover { color: var(--terre); transform: translateY(-2px);}
 }
 
 .db-card {
-  background: #ffffff;
-  border-radius: 16px;
+  background: var(--bg-card);
   padding: 24px;
-  /* Ombre plus travaillée pour donner de la profondeur */
-  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.02), 
-              -8px -8px 20px rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.03);
   position: relative;
-  overflow: hidden; /* Pour que rien ne dépasse des arrondis */
+  /* On garde un arrondi léger mais on mise sur la bordure */
+  border: 1px solid var(--bordure);
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  /* On enlève l'ombre neumorphique pour un look plus "plan de travail" */
+  box-shadow: 4px 4px 0px var(--bordure); 
 }
 
 /* On ajoute un petit "voyant" lumineux pour le statut */
-.db-card::before {
+.db-card::before, .db-card::after {
   content: "";
   position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--bordure); /* Couleur par défaut */
+  width: 0;
+  height: 0;
+  border: 0 solid var(--petrole); /* Couleur pétrole comme ta nav */
+  transition: all 0.4s ease;
 }
 
-/* Animation au survol : la carte se soulève et l'ombre s'accentue */
+/* Coin haut-gauche */
+.db-card::before { top: 0; left: 0; }
+/* Coin bas-droite */
+.db-card::after { bottom: 0; right: 0; }
+
+/* Animation au survol de la carte */
 .db-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-  border-color: var(--lilas);
+  transform: translate(-2px, -2px); /* Petit décalage pour l'effet 3D */
+  box-shadow: 8px 8px 0px var(--givre); /* L'ombre devient colorée */
+  border-color: var(--petrole);
 }
 
-/* On stylise les titres à l'intérieur */
+.db-card:hover::before {
+  width: 25px; height: 25px;
+  border-top-width: 3px; border-left-width: 3px;
+}
+
+.db-card:hover::after {
+  width: 25px; height: 25px;
+  border-bottom-width: 3px; border-right-width: 3px;
+}
+
+/* Le titre H3 typé "Technique" */
 .db-card h3 {
-  font-size: 1.1rem;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
+  font-family: var(--font-title);
+  font-size: 1.2rem;
   color: var(--petrole);
-  border-bottom: 2px solid var(--givre);
-  display: inline-block;
-  padding-bottom: 5px;
+  margin-bottom: 15px;
+  padding-left: 10px;
+  border-left: 4px solid var(--rose); /* Rappel de ta barre de côté "active" */
+  display: block;
 }
 
-.dashboard-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  padding: 10px;
+/* Pour le contenu, on reste sobre */
+.db-content {
+  font-size: 14px;
+  color: var(--tempete);
 }
 
-.db-card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 24px;
-  /* Ombre plus travaillée pour donner de la profondeur */
-  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.02), 
-              -8px -8px 20px rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.03);
-  position: relative;
-  overflow: hidden; /* Pour que rien ne dépasse des arrondis */
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
 
-/* On ajoute un petit "voyant" lumineux pour le statut */
-.db-card::before {
-  content: "";
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--bordure); /* Couleur par défaut */
-}
 
-/* Animation au survol : la carte se soulève et l'ombre s'accentue */
-.db-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-  border-color: var(--lilas);
-}
-
-/* On stylise les titres à l'intérieur */
-.db-card h3 {
-  font-size: 1.1rem;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  color: var(--petrole);
-  border-bottom: 2px solid var(--givre);
-  display: inline-block;
-  padding-bottom: 5px;
-}

@@ -146,6 +146,7 @@ function editProject(id) {
 async function deleteProject(id) {
   if (!confirm('Supprimer ce projet ?')) return;
   const { error } = await _supabase.from('iceolie_projets').delete().eq('id', id);
+  console.log('erreur supabase :', error);
   if (error) { alert('Erreur : ' + error.message); return; }
   fetchProjects();
 }
